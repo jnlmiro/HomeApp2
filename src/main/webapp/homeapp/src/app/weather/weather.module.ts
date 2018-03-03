@@ -12,13 +12,14 @@ import {WeatherConfigComponent} from "./config/weather.config.component";
 import {WeatherRoutingModule} from "./weather-routing.module";
 import {WeatherForecastComponent} from "./forecast/weather-forecast.component";
 import {SharedModule} from "../shared/shared.module";
+import {WeatherConfigService} from "./config/weather-config.service";
 
 
 @NgModule({
   imports: [BrowserModule, WeatherRoutingModule, SharedModule],
   exports: [WeatherForecastComponent],
   declarations: [WeatherComponent, WeatherForecastComponent, TimeSeriesComponent, CurrentWeatherComponent, CurrentWeatherTimeseriesFilter, WeatherConfigComponent],
-  providers: [WeatherService],
+  providers: [WeatherService, WeatherConfigService],
 })
 export class WeatherModule {
 }

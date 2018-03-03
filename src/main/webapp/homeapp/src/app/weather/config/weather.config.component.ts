@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {WeatherLocation} from "../weather.model";
+import {WeatherConfigService} from "./weather-config.service";
 
 @Component({
-  moduleId: module.id,
   selector: 'weather-config-component',
   templateUrl: 'weather-config-component.component.html'
 })
 
 export class WeatherConfigComponent implements OnInit {
 
-  foundLocations: string[] = [];
-  constructor() {
+  foundLocations: WeatherLocation[] = [];
+  constructor(private weatherConfigService: WeatherConfigService) {
   }
 
   ngOnInit() {
@@ -18,6 +18,12 @@ export class WeatherConfigComponent implements OnInit {
 
 
   onSearch(searchString) {
-      this.foundLocations.push(searchString);
+    this.weatherConfigService.searchLocations(searchString)
+      .subscribe(
+        resultArray => this.foundLocations = resultArray,
+        error => console.log("Error :: " + error)
+      );
+      // this.foundLocations.push(searchString);
   }
+
 }

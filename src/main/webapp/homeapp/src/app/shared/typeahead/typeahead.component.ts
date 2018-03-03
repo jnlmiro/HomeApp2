@@ -8,10 +8,7 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 
 export class TypeaheadComponent {
 
-  searchString: string;
-
   @Input() searchResults: [any];
-
   @Output() search = new EventEmitter<any>();
 
   constructor() {
