@@ -1,0 +1,11 @@
+<div>
+  <div class="card">
+    <div class="card-content">
+      <div class="card-title">Weather Settings</div>
+      <div class="row">
+        <typeahead (search)="onSearch($event)" [searchResults]="foundLocations"></typeahead>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>

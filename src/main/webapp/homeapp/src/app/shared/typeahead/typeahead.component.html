@@ -1,0 +1,20 @@
+<form class="col s12 typeahead-container" name="typeaheadForm">
+  <div class="row text-input">
+    <div class="input-field col s12">
+      <input placeholder="Placeholder" id="search_text" type="text" [(ngModel)]="searchString" name="serch_string"
+             (ngModelChange)="onChange($event)">
+      <label for="search_text" class="active">Search</label>
+    </div>
+  </div>
+  <div class="row results">
+    <div class="col s12">
+      <div class="collection" *ngIf="searchResults.length">
+        <a class="collection-item" *ngFor="let searchResult of searchResults">
+          <div>
+            {{searchResult}}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</form>

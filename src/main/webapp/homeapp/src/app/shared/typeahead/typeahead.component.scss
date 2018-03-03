@@ -1,0 +1,16 @@
+.typeahead-container {
+
+  .text-input.row {
+    margin-bottom: 0 !important;
+
+    input[type="text"] {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .results.row {
+    div.collection {
+      margin-top: 0 !important;
+    }
+  }
+}

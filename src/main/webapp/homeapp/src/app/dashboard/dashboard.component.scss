@@ -1,0 +1,14 @@
+.dashboard {
+  height: 100vh;
+
+  .board {
+    display: inline-block;
+    margin: 10px;
+    font-size: large;
+    font-weight: 500;
+
+    div {
+      cursor: default;
+    }
+  }
+}

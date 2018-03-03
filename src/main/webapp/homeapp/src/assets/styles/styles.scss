@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "custom";
+
+@media only screen and (max-width: 800px) {
+  html {
+    cursor: none;
+  }
+}
+
+
+
+a:hover {
+  cursor: default;
+}
+
+.bluish {
+  color: #455963;
+}
+
+body {
+  background-color: #cccccc;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: inherit;
+}
+
+.row {
+  margin-bottom: 10px !important;
+}
+
+
