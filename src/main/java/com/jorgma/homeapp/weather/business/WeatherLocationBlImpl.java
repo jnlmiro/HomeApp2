@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +35,10 @@ public class WeatherLocationBlImpl implements WeatherLocationBl {
 
     @Override
     public List<WeatherLocation> searchWeatherLocation(String place) {
+        if (place.isEmpty()) {
+            return new ArrayList<>();
+        }
+
         String url = "https://www.smhi.se/wpt-a/backend_solr/autocomplete/search/$place";
         ResponseEntity<List<WeatherLocation>> responseEntity = restTemplate.exchange(url.replace("$place", place), HttpMethod.GET, null, new ParameterizedTypeReference<List<WeatherLocation>>() {
         });
