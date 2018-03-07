@@ -23,7 +23,14 @@ export class WeatherConfigComponent implements OnInit {
         resultArray => this.foundLocations = resultArray,
         error => console.log("Error :: " + error)
       );
-      // this.foundLocations.push(searchString);
   }
+
+
+  search(event) {
+    let searchString:string =  event.target.value;
+    this.onSearch(searchString);
+  }
+
+  locationViewValueFormatter = (x: {place: string}) => x.place;
 
 }
