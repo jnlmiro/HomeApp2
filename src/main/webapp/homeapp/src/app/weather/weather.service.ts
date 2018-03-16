@@ -7,31 +7,35 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Geometry, Parameters, TimeSeries, WEATHER_SYMBOL, WeatherForecast} from "./weather.model";
+import {Geometry, Parameters, TimeSeries, WEATHER_SYMBOL, WeatherForecast, WeatherLocation} from "./weather.model";
 import * as moment from "moment";
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpParams} from "@angular/common/http";
+import {Observable} from "rxjs/Observable";
 
-
-const LAT = 59.3293;
-const LON = 18.0686;
 
 @Injectable()
 export class WeatherService {
   now: Date;
   url = `/api/weather-forecast`;
+  locationUrl = `/api/weather-locations`;
   weather_symbol = WEATHER_SYMBOL;
 
-  constructor(private http: Http, private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {
 
   }
 
 
-  public getWeatherForecast(): Promise<any> {
+  public getCurrentWeatherForecast(): Promise<WeatherLocation> {
+    return this.httpClient.get(`${this.locationUrl}/current`).toPromise();
+  }
+
+
+  public getWeatherForecast(location: WeatherLocation): Promise<WeatherLocation> {
 
     let params = new HttpParams();
-    params = params.append('longitude', LON.toString());
-    params = params.append('latitude', LAT.toString());
+    params = params.append('longitude', location.lon.toString());
+    params = params.append('latitude', location.lat.toString());
 
     return this.httpClient.get(this.url, {params: params}).toPromise();
   }

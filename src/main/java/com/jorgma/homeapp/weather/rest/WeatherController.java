@@ -20,6 +20,7 @@ public class WeatherController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public Weather getForecastForWeatherLocation(@RequestParam("latitude") double latitude, @RequestParam("longitude") double longitude) {
+        System.out.println("hej");
         return weatherService.getForCoordinates(latitude, longitude);
     }
 }

@@ -1,6 +1,6 @@
 <div class="col s12 current-weather" *ngIf="currentTimeSeries">
   <div class="info">
-    <p class="city">Stockholm</p>
+    <p class="city">{{currentWeatherLocation.place}}</p>
     <p>{{currentTimeSeries.validTime | date:"yyyy-MM-dd HH:mm" }}</p>
     <div class="weather-status"><p>{{weather_symbol[currentTimeSeries.parameters.Wsymb2.value].name.se}}</p></div>
 

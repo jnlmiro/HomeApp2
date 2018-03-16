@@ -1,9 +1,9 @@
 package com.jorgma.homeapp.weather.domain;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,14 +19,18 @@ public class WeatherLocation {
     @Id
     @GeneratedValue
     private int id;
+    @JsonProperty("geonameid")
     private int geoNameId;
     private String place;
     private int population;
+    @JsonProperty("lon")
     private double longitude;
+    @JsonProperty("lat")
     private double latitude;
     private String municipality;
     private String country;
     private String district;
+    private boolean current;
 
 
     public int getId() {
@@ -41,7 +45,6 @@ public class WeatherLocation {
         return geoNameId;
     }
 
-    @JsonSetter("geonameid")
     public void setGeoNameId(int geoNameId) {
         this.geoNameId = geoNameId;
     }
@@ -66,16 +69,16 @@ public class WeatherLocation {
         return longitude;
     }
 
-    @JsonSetter("lon")
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
 
     public double getLatitude() {
         return latitude;
     }
 
-    @JsonSetter("lat")
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -103,4 +106,13 @@ public class WeatherLocation {
     public void setDistrict(String district) {
         this.district = district;
     }
+
+    public boolean isCurrent() {
+        return current;
+    }
+
+    public void setCurrent(boolean current) {
+        this.current = current;
+    }
+
 }

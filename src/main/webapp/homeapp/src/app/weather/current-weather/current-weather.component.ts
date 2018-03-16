@@ -2,7 +2,7 @@
  * Created by jorgma on 2017-07-16.
  */
 import {Component, OnInit, Input, ChangeDetectionStrategy} from "@angular/core";
-import {WeatherForecast, WEATHER_SYMBOL, TimeSeries} from "../weather.model";
+import {WeatherForecast, WEATHER_SYMBOL, TimeSeries, WeatherLocation} from "../weather.model";
 import {WeatherService} from "../weather.service";
 
 
@@ -21,6 +21,8 @@ export class CurrentWeatherComponent implements OnInit {
       this.currentTimeSeries = weather.currentTimeSeries;
     }
   }
+
+  @Input() currentWeatherLocation:WeatherLocation;
 
   constructor(private weatherService: WeatherService) {
   }

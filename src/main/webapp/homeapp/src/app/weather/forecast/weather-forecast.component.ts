@@ -4,7 +4,7 @@
 
 import {Component, OnInit, AfterViewInit, OnDestroy} from "@angular/core";
 import {WeatherService} from "../weather.service";
-import {WeatherForecast, TimeSeries} from "../weather.model";
+import {WeatherForecast, TimeSeries, WeatherLocation} from "../weather.model";
 
 @Component({
   selector: 'weather-forecast',
@@ -16,6 +16,7 @@ export class WeatherForecastComponent implements OnInit, AfterViewInit, OnDestro
 
   weatherForecast: WeatherForecast;
   intervalId: number;
+  currentWeatherLocation:WeatherLocation;
 
 
   constructor(private weatherService: WeatherService) {
@@ -32,7 +33,12 @@ export class WeatherForecastComponent implements OnInit, AfterViewInit, OnDestro
 
 
   public getWeatherForecast() {
-    this.weatherService.getWeatherForecast()
+    this.weatherService.getCurrentWeatherForecast()
+      .then((res) => {
+
+        this.currentWeatherLocation = res;
+        return this.weatherService.getWeatherForecast(res);
+      })
       .then((res) => {
         return this.weatherService.mapForecast(res);
       })

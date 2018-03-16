@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by jorgma on 2018-02-23.
@@ -24,13 +25,37 @@ public class WeatherLocationBlImpl implements WeatherLocationBl {
     RestTemplate restTemplate;
 
     @Override
-    public void saveWeatherLocation(WeatherLocation weatherLocation) {
-        weatherLocationRepository.save(weatherLocation);
+    public WeatherLocation saveWeatherLocation(WeatherLocation weatherLocation) {
+
+        long count = weatherLocationRepository.count();
+        if(count == 0) {
+            weatherLocation.setCurrent(true);
+        }
+
+        return weatherLocationRepository.save(weatherLocation);
     }
 
     @Override
     public List<WeatherLocation> getAllWeatherLocations() {
         return (List<WeatherLocation>) weatherLocationRepository.findAll();
+    }
+
+    @Override
+    public WeatherLocation setCurrentWeatherLocation(WeatherLocation weatherLocation) {
+        Optional<WeatherLocation> currentWeatherLocation = this.getCurrentWeatherLocation();
+        if(currentWeatherLocation.isPresent()) {
+            currentWeatherLocation.get().setCurrent(false);
+            weatherLocationRepository.save(currentWeatherLocation.get());
+        }
+
+        weatherLocation.setCurrent(true);
+        return weatherLocationRepository.save(weatherLocation);
+    }
+
+
+    @Override
+    public Optional<WeatherLocation> getCurrentWeatherLocation() {
+        return weatherLocationRepository.findByCurrent(true);
     }
 
     @Override

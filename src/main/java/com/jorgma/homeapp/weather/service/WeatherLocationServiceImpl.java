@@ -5,8 +5,8 @@ import com.jorgma.homeapp.weather.domain.WeatherLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.Watchable;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by jorgma on 2018-02-23.
@@ -19,8 +19,13 @@ public class WeatherLocationServiceImpl implements WeatherLocationService {
 
 
     @Override
-    public void saveWeatherLocation(WeatherLocation weatherLocation) {
-        weatherLocationBl.saveWeatherLocation(weatherLocation);
+    public WeatherLocation saveWeatherLocation(WeatherLocation weatherLocation) {
+        return weatherLocationBl.saveWeatherLocation(weatherLocation);
+    }
+
+    @Override
+    public WeatherLocation setCurrentWeatherLocation(WeatherLocation weatherLocation) {
+        return weatherLocationBl.setCurrentWeatherLocation(weatherLocation);
     }
 
     @Override
@@ -31,5 +36,10 @@ public class WeatherLocationServiceImpl implements WeatherLocationService {
     @Override
     public List<WeatherLocation> searchWeatherLocation(String place) {
         return weatherLocationBl.searchWeatherLocation(place);
+    }
+
+    @Override
+    public Optional<WeatherLocation> getCurrentWeatherLocation() {
+        return weatherLocationBl.getCurrentWeatherLocation();
     }
 }

@@ -8,18 +8,19 @@ import {TimeSeriesComponent} from "./timeseries/timeseries.component";
 import {CurrentWeatherComponent} from "./current-weather/current-weather.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {CurrentWeatherTimeseriesFilter} from "./currentWeatherTimeSeriesFilter";
-import {WeatherConfigComponent} from "./config/weather.config.component";
+
 import {WeatherRoutingModule} from "./weather-routing.module";
 import {WeatherForecastComponent} from "./forecast/weather-forecast.component";
 import {SharedModule} from "../shared/shared.module";
-import {WeatherConfigService} from "./config/weather-config.service";
+import {WeatherLocationService} from "./location/weather-location.service";
+import {WeatherLocationComponent} from "./location/weather-location.component";
 
 
 @NgModule({
   imports: [BrowserModule, WeatherRoutingModule, SharedModule],
   exports: [WeatherForecastComponent],
-  declarations: [WeatherComponent, WeatherForecastComponent, TimeSeriesComponent, CurrentWeatherComponent, CurrentWeatherTimeseriesFilter, WeatherConfigComponent],
-  providers: [WeatherService, WeatherConfigService],
+  declarations: [WeatherComponent, WeatherForecastComponent, TimeSeriesComponent, CurrentWeatherComponent, CurrentWeatherTimeseriesFilter, WeatherLocationComponent],
+  providers: [WeatherService, WeatherLocationService],
 })
 export class WeatherModule {
 }

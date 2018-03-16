@@ -73,12 +73,13 @@ export class Parameters {
 
 export class WeatherLocation {
   id: number;
-  geoNameId:number;
+  geonameid:number;
   place:string;
   population:number;
-  longitude:number;
-  latitude:number;
+  lon:number;
+  lat:number;
   municipality:string;
   country:string;
   district:string;
+  current:boolean;
 }

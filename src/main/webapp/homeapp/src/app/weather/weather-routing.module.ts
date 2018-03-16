@@ -1,8 +1,7 @@
 import {RouterModule, Routes} from "@angular/router";
-import {WeatherConfigComponent} from "./config/weather.config.component";
+import {WeatherLocationComponent} from "./location/weather-location.component";
 import {NgModule} from "@angular/core";
 import {WeatherComponent} from "./weather.component";
-import {WeatherForecast} from "./weather.model";
 import {WeatherForecastComponent} from "./forecast/weather-forecast.component";
 
 const weatherRoutes: Routes = [
@@ -15,7 +14,7 @@ const weatherRoutes: Routes = [
         component: WeatherForecastComponent,
       }, {
         path: 'config',
-        component: WeatherConfigComponent
+        component: WeatherLocationComponent
       }
     ]
   }
