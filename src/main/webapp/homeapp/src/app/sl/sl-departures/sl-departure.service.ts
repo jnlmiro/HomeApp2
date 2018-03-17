@@ -27,7 +27,8 @@ const NUMBER_OF_DEPARTURES = 4;
 
 @Injectable()
 export class SlDepartureService {
-  private url: string = 'http://sl.se/api/sv/RealTime/GetDepartures/';
+  // private url: string = 'http://sl.se/api/sv/RealTime/GetDepartures/';
+  private url: string = 'api/sl/station/';
 
   constructor(private http: Http) {
 
@@ -50,8 +51,9 @@ export class SlDepartureService {
     let resObj = res.json();
     let slDeparture = new SlDeparture();
     let mappedGroups: Group[] = [];
-    if (resObj.data && resObj.data.HasResultData === true) {
+    if (resObj.data && resObj.data.hasResultData === true) {
       let dataObjProperties = Object.keys(resObj.data);
+      console.log('dataObjProperties', dataObjProperties);
       for (let i = 0; i < dataObjProperties.length; i++) {
         let property = dataObjProperties[i];
         if (typeof resObj.data[property] === "object") {
@@ -61,9 +63,9 @@ export class SlDepartureService {
       }
     }
 
-    slDeparture.hasResultData = resObj.data.HasResultData;
-    slDeparture.hasStopPointDeviations = resObj.data.HasStopPointDeviations;
-    slDeparture.lastUpdate = resObj.data.LastUpdate;
+    slDeparture.hasResultData = resObj.data.hasResultData;
+    slDeparture.hasStopPointDeviations = resObj.data.hasStopPointDeviations;
+    slDeparture.lastUpdate = resObj.data.lastUpdate;
     slDeparture.groups = mappedGroups;
     return slDeparture;
   }
@@ -76,19 +78,20 @@ export class SlDepartureService {
       let departureGroup = new Group();
 
       departureGroup.name = groupName;
-      departureGroup.groupId = groups[i].GroupId;
+      departureGroup.groupId = groups[i].groupId;
 
-      departureGroup.currentServerTime = groups[i].CurrentServerTime;
+      departureGroup.currentServerTime = groups[i].currentServerTime;
 
-      departureGroup.title = groups[i].Title;
-      departureGroup.transportSymbol = groups[i].TransportSymbol;
-      departureGroup.type = TYPES[groupName];
+      departureGroup.title = groups[i].title;
+      departureGroup.transportSymbol = groups[i].transportSymbol;
+      departureGroup.type = groups[i].type;
       departureGroup.departures = [];
 
-      if (groups[i].Departures) {
-        let maxNumberOfDepartures = groups[i].Departures.length > NUMBER_OF_DEPARTURES ? NUMBER_OF_DEPARTURES : groups[i].Departures.length;
+      if (groups[i].departures) {
+        let maxNumberOfDepartures = groups[i].departures.length > NUMBER_OF_DEPARTURES ? NUMBER_OF_DEPARTURES : groups[i].departures.length;
+        console.log('departureGroup',departureGroup);
         for (let j = 0; j < maxNumberOfDepartures; j++) {
-          departureGroup.departures.push(this.mapDeparture(groups[i].Departures[j]))
+          departureGroup.departures.push(this.mapDeparture(groups[i].departures[j]))
         }
       }
 
@@ -99,12 +102,12 @@ export class SlDepartureService {
 
   private mapDeparture(departure: any) {
     let groupDeparture = new Departure();
-    groupDeparture.destination = departure.Destination;
-    groupDeparture.deviations = departure.Deviations;
-    groupDeparture.displayTime = departure.DisplayTime;
-    groupDeparture.expectedDateTime = departure.ExpectedDateTime;
-    groupDeparture.lineNumber = departure.LineNumber;
-    groupDeparture.stopPointNumber = departure.StopPointNumber;
+    groupDeparture.destination = departure.destination;
+    groupDeparture.deviations = departure.deviations;
+    groupDeparture.displayTime = departure.displayTime;
+    groupDeparture.expectedDateTime = departure.expectedDateTime;
+    groupDeparture.lineNumber = departure.lineNumber;
+    groupDeparture.stopPointNumber = departure.stopPointNumber;
     return groupDeparture;
   }
 

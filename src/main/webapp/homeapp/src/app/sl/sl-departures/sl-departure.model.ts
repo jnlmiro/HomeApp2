@@ -7,7 +7,6 @@ export class SlDeparture {
   hasResultData: boolean;
   hasStopPointDeviations: boolean;
   lastUpdate: string;
-
 }
 
 

@@ -1,9 +1,11 @@
 package com.jorgma.homeapp.sl.rest;
 
-import com.jorgma.homeapp.sl.domain.DepartureGroup;
+import com.jorgma.homeapp.sl.domain.SlDeparturesRestApiResponse;
 import com.jorgma.homeapp.sl.service.SlDeparturesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,12 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/sl")
 public class SlDeparturesController {
 
+    @Autowired
+    SlDeparturesService slDeparturesService;
 
-//    SlDeparturesService slDeparturesService;
-
-//    @RequestMapping("/station/{stationName}")
-//    public DepartureGroup getDepartureGroups(@PathVariable String stationName) {
-//
-//        return slDeparturesSevice.getDepartureGroups(stationName);
-//    }
+    @RequestMapping(value = "/station/{siteId}", method = RequestMethod.GET)
+    public SlDeparturesRestApiResponse getDepartureGroups(@PathVariable int siteId) {
+        return slDeparturesService.getDepartureGroups(siteId);
+    }
 }
