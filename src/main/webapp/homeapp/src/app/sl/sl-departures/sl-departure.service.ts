@@ -12,8 +12,8 @@ const STATIONS = {
 };
 
 const TYPES = {
-  'BusGroups': 'Buss',
-  'MetroGroups': 'Tunnelbana'
+  'busGroups': 'Buss',
+  'metroGroups': 'Tunnelbana'
 };
 
 
@@ -53,7 +53,7 @@ export class SlDepartureService {
     let mappedGroups: Group[] = [];
     if (resObj.data && resObj.data.hasResultData === true) {
       let dataObjProperties = Object.keys(resObj.data);
-      console.log('dataObjProperties', dataObjProperties);
+
       for (let i = 0; i < dataObjProperties.length; i++) {
         let property = dataObjProperties[i];
         if (typeof resObj.data[property] === "object") {
@@ -84,12 +84,12 @@ export class SlDepartureService {
 
       departureGroup.title = groups[i].title;
       departureGroup.transportSymbol = groups[i].transportSymbol;
-      departureGroup.type = groups[i].type;
+      departureGroup.type = TYPES[groupName];
+
       departureGroup.departures = [];
 
       if (groups[i].departures) {
         let maxNumberOfDepartures = groups[i].departures.length > NUMBER_OF_DEPARTURES ? NUMBER_OF_DEPARTURES : groups[i].departures.length;
-        console.log('departureGroup',departureGroup);
         for (let j = 0; j < maxNumberOfDepartures; j++) {
           departureGroup.departures.push(this.mapDeparture(groups[i].departures[j]))
         }
