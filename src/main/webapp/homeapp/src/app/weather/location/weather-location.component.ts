@@ -4,7 +4,8 @@ import {WeatherLocationService} from "./weather-location.service";
 
 @Component({
   selector: 'weather-location-component',
-  templateUrl: 'weather-location.component.html'
+  templateUrl: 'weather-location.component.html',
+  styleUrls: ['weather-location.component.scss']
 })
 
 export class WeatherLocationComponent implements OnInit {
@@ -66,6 +67,7 @@ export class WeatherLocationComponent implements OnInit {
     this.locations.push(location);
   }
 
+
   setCurrentLocation(location: WeatherLocation, isCurrent: boolean) {
     location.current = isCurrent;
     this.weatherLocationService.assertAtLeastOneCurrent(this.locations)
@@ -89,6 +91,23 @@ export class WeatherLocationComponent implements OnInit {
         loc.current = location.current;
       }
     });
+  }
+
+  removeLocation(location: WeatherLocation) {
+    this.weatherLocationService.removeLocation(location)
+      .subscribe(res => {
+        this._onRemoveLocation(location);
+      });
+  }
+
+  _onRemoveLocation(location: WeatherLocation) {
+    this.locations = this.locations.filter(loc => {
+      return loc.id !== location.id
+    });
+    if (this.locations.length > 0 && location.current === true) {
+      const isCurrent: boolean = true;
+      this.setCurrentLocation(this.locations[0], isCurrent);
+    }
   }
 
   locationViewValueFormatter = (x: { place: string }) => x.place;

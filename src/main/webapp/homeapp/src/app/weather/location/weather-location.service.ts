@@ -53,4 +53,9 @@ export class WeatherLocationService {
 
   }
 
+  removeLocation(location:WeatherLocation): Observable<WeatherLocation> {
+    let params = new HttpParams();
+    params = params.append('id', location.id.toString());
+    return this.httpClient.delete(this.locationUrl, {params:params});
+  }
 }

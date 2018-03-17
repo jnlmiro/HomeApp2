@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Created by jorgma on 2018-02-21.
  */
-public interface WeatherLocationRepository extends PagingAndSortingRepository<WeatherLocation, Long> {
+public interface WeatherLocationRepository extends PagingAndSortingRepository<WeatherLocation, Integer> {
 
     Optional<WeatherLocation> findByCurrent(boolean isCurrent);
 }

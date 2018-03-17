@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper no-padding-top">
   <div class="col s12 white">
     <h4>Weather Settings</h4>
     <ng-template #weatherLocationItemTpl let-location="item">
@@ -47,14 +47,18 @@
                 <div class="col s12"></div>
               </div>
               <div class="col s4">
-                <div class="switch">
-                  <label>
-
-                    <input type="checkbox" [checked]="location.current"
-                           (change)="setCurrentLocation(location, $event.target.checked)">
-                    <span class="lever"></span>
-                    default
-                  </label>
+                <div class="actions">
+                  <div class="switch">
+                    <label title="Set Default Location">
+                      <input type="checkbox" [checked]="location.current"
+                             (change)="setCurrentLocation(location, $event.target.checked)">
+                      <span class="lever"></span>
+                      default
+                    </label>
+                  </div>
+                  <div>
+                    <a title="Remove Location" (click)="removeLocation(location)"><i class="material-icons red-text text-darken-4">close</i></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,5 +67,4 @@
       </div>
     </div>
   </div>
-
 </div>

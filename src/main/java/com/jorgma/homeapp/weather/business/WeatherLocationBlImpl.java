@@ -70,4 +70,11 @@ public class WeatherLocationBlImpl implements WeatherLocationBl {
         List<WeatherLocation> weatherLocations = responseEntity.getBody();
         return weatherLocations;
     }
+
+    @Override
+    public WeatherLocation removeWeatherLocation(int id) {
+        WeatherLocation removedWeatherLocation = (WeatherLocation) weatherLocationRepository.findOne(id);
+        weatherLocationRepository.delete(id);
+        return removedWeatherLocation;
+    }
 }

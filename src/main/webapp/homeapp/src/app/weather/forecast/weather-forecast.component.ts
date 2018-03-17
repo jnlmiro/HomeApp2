@@ -16,7 +16,7 @@ export class WeatherForecastComponent implements OnInit, AfterViewInit, OnDestro
 
   weatherForecast: WeatherForecast;
   intervalId: number;
-  currentWeatherLocation:WeatherLocation;
+  currentWeatherLocation: WeatherLocation;
 
 
   constructor(private weatherService: WeatherService) {
@@ -34,19 +34,17 @@ export class WeatherForecastComponent implements OnInit, AfterViewInit, OnDestro
 
   public getWeatherForecast() {
     this.weatherService.getCurrentWeatherForecast()
-      .then((res) => {
-
+      .flatMap(res => {
         this.currentWeatherLocation = res;
         return this.weatherService.getWeatherForecast(res);
       })
-      .then((res) => {
-        return this.weatherService.mapForecast(res);
-      })
-      .then((weatherForecast) => {
-        this.weatherForecast = weatherForecast;
-      })
-
-  }
+      .subscribe((res) => {
+        return this.weatherService.mapForecast(res)
+          .then(weatherForecast => {
+            this.weatherForecast = weatherForecast;
+          })
+      });
+  };
 
 
   public getMinMaxParameterValue(timeSeries: TimeSeries[], paramName: string, min: boolean): number {

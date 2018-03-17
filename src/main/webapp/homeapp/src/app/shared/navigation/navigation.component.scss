@@ -1,0 +1,25 @@
+
+.navigation {
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.75em 0.75em 0 0.75em;
+  background-color: #1976d2;
+  margin-bottom: 0.5em;
+
+  a {
+    color: white;
+  }
+
+  .nav-arrows {
+    margin-left: auto;
+    a {
+      margin-left: 2em;
+    }
+  }
+
+  .dashboard {
+
+  }
+}
+

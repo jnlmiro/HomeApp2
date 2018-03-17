@@ -30,6 +30,11 @@ public class WeatherLocationController {
         return weatherLocationService.setCurrentWeatherLocation(weatherLocation);
     }
 
+    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    public WeatherLocation removeWeatherLocation(@RequestParam("id") int id) {
+        return weatherLocationService.removeWeatherLocation(id);
+    }
+
     @RequestMapping(value = "current", method = RequestMethod.GET)
     public WeatherLocation getCurrentWeatherLocation() {
         return weatherLocationService.getCurrentWeatherLocation().get();

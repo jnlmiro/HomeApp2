@@ -42,4 +42,9 @@ public class WeatherLocationServiceImpl implements WeatherLocationService {
     public Optional<WeatherLocation> getCurrentWeatherLocation() {
         return weatherLocationBl.getCurrentWeatherLocation();
     }
+
+    @Override
+    public WeatherLocation removeWeatherLocation(int id) {
+        return weatherLocationBl.removeWeatherLocation(id);
+    }
 }

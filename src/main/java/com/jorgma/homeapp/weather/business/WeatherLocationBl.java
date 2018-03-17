@@ -20,4 +20,5 @@ public interface WeatherLocationBl {
 
     Optional<WeatherLocation> getCurrentWeatherLocation();
 
+    WeatherLocation removeWeatherLocation(int id);
 }

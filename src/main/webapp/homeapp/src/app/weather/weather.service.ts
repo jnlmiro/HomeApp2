@@ -26,18 +26,18 @@ export class WeatherService {
   }
 
 
-  public getCurrentWeatherForecast(): Promise<WeatherLocation> {
-    return this.httpClient.get(`${this.locationUrl}/current`).toPromise();
+  public getCurrentWeatherForecast(): Observable<WeatherLocation> {
+    return this.httpClient.get(`${this.locationUrl}/current`);
   }
 
 
-  public getWeatherForecast(location: WeatherLocation): Promise<WeatherLocation> {
+  public getWeatherForecast(location: WeatherLocation): Observable<WeatherLocation> {
 
     let params = new HttpParams();
     params = params.append('longitude', location.lon.toString());
     params = params.append('latitude', location.lat.toString());
 
-    return this.httpClient.get(this.url, {params: params}).toPromise();
+    return this.httpClient.get(this.url, {params: params});
   }
 
 

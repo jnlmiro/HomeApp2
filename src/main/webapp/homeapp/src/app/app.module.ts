@@ -10,6 +10,7 @@ import {StationsModule} from "./sl/stations/stations.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {WeatherModule} from "./weather/weather.module";
 import {HttpClientModule} from "@angular/common/http";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {HttpClientModule} from "@angular/common/http";
     RPiBacklightModule,
     StationsModule,
     WeatherModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

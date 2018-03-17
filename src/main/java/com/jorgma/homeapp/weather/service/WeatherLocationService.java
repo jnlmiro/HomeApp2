@@ -19,4 +19,6 @@ public interface WeatherLocationService {
     List<WeatherLocation> searchWeatherLocation(String place);
 
     Optional<WeatherLocation> getCurrentWeatherLocation();
+
+    WeatherLocation removeWeatherLocation(int id);
 }
