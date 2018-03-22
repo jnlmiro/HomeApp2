@@ -15,7 +15,6 @@ export class DashboardService {
   public getRoutes(router: Router): Board[] {
     let boards: Board[] = [];
     for (let i in router.config) {
-      console.log(router.config[i]);
       let board = new Board();
       let path = router.config[i].path;
       if (this.isPathToShow(path)) {

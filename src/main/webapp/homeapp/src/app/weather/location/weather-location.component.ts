@@ -52,7 +52,6 @@ export class WeatherLocationComponent implements OnInit {
   saveLocation(location: WeatherLocation) {
     const existsAlready = typeof this.locations.find(y => y.geonameid == location.geonameid) !== 'undefined';
     if (existsAlready) {
-      console.log('Exists already');
       return;
     }
 
