@@ -6,7 +6,7 @@ import {Location} from "@angular/common";
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.scss'],
 })
-export class NavigationComponent {
+export class NavigationComponent{
 
   constructor(private location: Location) {
 

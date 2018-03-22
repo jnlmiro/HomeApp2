@@ -3,9 +3,9 @@
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.75em 0.75em 0 0.75em;
+  padding: 0.75rem 0.75rem 0 0.75rem;
   background-color: #1976d2;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 
   a {
     color: white;
@@ -14,11 +14,16 @@
   .nav-arrows {
     margin-left: auto;
     a {
-      margin-left: 2em;
+      margin-left: 2rem;
     }
   }
 
   .dashboard {
+
+  }
+
+  .fullscreen-toggler-container {
+    margin-left: auto;
 
   }
 }
