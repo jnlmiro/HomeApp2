@@ -4,16 +4,17 @@
 
 @media only screen and (max-width: 800px) {
   html {
-    cursor: none;
+      cursor: none !important;
   }
 }
 
 
 html, body {
   height:100%;
+  width: 100%;
 }
 
-body {
+html, body {
   background-color: #EDEDED !important;
 }
 
@@ -25,9 +26,6 @@ a:hover {
   color: #455963;
 }
 
-body {
-  background-color: #cccccc;
-}
 
 ::-webkit-scrollbar {
   width: 0;

@@ -31,7 +31,9 @@ public class ViewsController {
             "/entry-board",
             "/stations",
             "/weather",
-            "/weather/**"
+            "/weather/**",
+            "/rpi-backlight",
+            "/rpi-backlight/**"
     }, method = RequestMethod.GET)
     public String index() {
         return "forward:" + indexPath() + "index.html";
