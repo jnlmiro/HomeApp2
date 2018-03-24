@@ -35,8 +35,10 @@ export class WeatherForecastComponent implements OnInit, AfterViewInit, OnDestro
   public getWeatherForecast() {
     this.weatherService.getCurrentWeatherForecast()
       .flatMap(res => {
-        this.currentWeatherLocation = res;
-        return this.weatherService.getWeatherForecast(res);
+        if(res) {
+          this.currentWeatherLocation = res;
+          return this.weatherService.getWeatherForecast(res);
+        }
       })
       .subscribe((res) => {
         return this.weatherService.mapForecast(res)

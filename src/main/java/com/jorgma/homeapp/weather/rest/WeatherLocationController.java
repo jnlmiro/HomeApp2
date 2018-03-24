@@ -36,8 +36,14 @@ public class WeatherLocationController {
     }
 
     @RequestMapping(value = "current", method = RequestMethod.GET)
-    public WeatherLocation getCurrentWeatherLocation() {
-        return weatherLocationService.getCurrentWeatherLocation().get();
+    public WeatherLocation getCurrentWeatherLocation(HttpServletResponse httpServletResponse) {
+        if(weatherLocationService.getCurrentWeatherLocation().isPresent()) {
+            return weatherLocationService.getCurrentWeatherLocation().get();
+        }else {
+            httpServletResponse.setStatus(HttpStatus.NO_CONTENT.value());
+        }
+
+        return null;
     }
 
 
