@@ -7,8 +7,8 @@ import {WeatherLocation} from "../weather.model";
 
 @Injectable()
 export class WeatherLocationService {
-  searchLocationUrl = `/api/weather-locations/search`;
-  locationUrl = `/api/weather-locations`;
+  searchLocationUrl = '/api/weather-locations/search';
+  locationUrl = '/api/weather-locations';
 
   constructor(private httpClient: HttpClient) {
   }

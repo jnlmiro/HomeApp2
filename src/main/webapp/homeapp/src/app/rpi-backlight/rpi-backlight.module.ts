@@ -2,15 +2,17 @@
  * Created by jorgma on 2017-08-09.
  */
 import {NgModule} from "@angular/core";
-import {RPiBacklightComponent} from "./rpi-backlignt.component";
+import {RpiBackLightComponent} from "./rpi-backlignt.component";
 import {RPiBacklightRouting} from "./rpi-backlight.routing";
+import {FormsModule} from "@angular/forms";
+import {RpiBackLightService} from "./rpi-backlight.service";
 
 
 @NgModule({
-  imports: [RPiBacklightRouting],
+  imports: [RPiBacklightRouting, FormsModule],
   exports: [],
-  declarations: [RPiBacklightComponent],
-  providers: [],
+  declarations: [RpiBackLightComponent],
+  providers: [RpiBackLightService],
 })
-export class RPiBacklightModule {
+export class RpiBackLightModule {
 }

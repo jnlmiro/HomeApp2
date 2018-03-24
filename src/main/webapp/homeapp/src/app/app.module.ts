@@ -5,7 +5,7 @@ import {PageNotFoundComponent} from "./page-not-found.component";
 import {EntryBoardModule} from "./entry-board/entry-board.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DashboardModule} from "./dashboard/dashboard.module";
-import {RPiBacklightModule} from "./rpi-backlight/rpi-backlight.module";
+import {RpiBackLightModule} from "./rpi-backlight/rpi-backlight.module";
 import {StationsModule} from "./sl/stations/stations.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {WeatherModule} from "./weather/weather.module";
@@ -23,7 +23,7 @@ import {SharedModule} from "./shared/shared.module";
     HttpClientModule,
     EntryBoardModule,
     DashboardModule,
-    RPiBacklightModule,
+    RpiBackLightModule,
     StationsModule,
     WeatherModule,
     AppRoutingModule,
