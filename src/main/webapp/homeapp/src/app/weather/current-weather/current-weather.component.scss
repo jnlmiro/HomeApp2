@@ -1,8 +1,5 @@
 @import "../forecast/weather-forecast.component";
-
-
-@import "../../../assets/styles/custom";
-
+@import "../../../assets/styles/styles";
 
 .current-weather {
   .info {
@@ -42,7 +39,6 @@
       @include weather-background-img("fog.svg");
     }
 
-
     &.chance-of-rain {
       @include weather-background-img("chancerain.svg");
     }
@@ -75,8 +71,6 @@
       @include weather-background-img("snow.svg")
     }
   }
-
-
 
   .temperature {
     @extend .temperature;
