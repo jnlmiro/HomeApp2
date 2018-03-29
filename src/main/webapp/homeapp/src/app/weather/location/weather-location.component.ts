@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {WeatherLocation} from "../weather.model";
 import {WeatherLocationService} from "./weather-location.service";
+import {Observable} from "rxjs/Observable";
+import {debounceTime, distinctUntilChanged, last, switchMap, take, takeLast} from "rxjs/operators";
+import {Subject} from "rxjs/Subject";
+
 
 @Component({
   selector: 'weather-location-component',
@@ -14,8 +18,17 @@ export class WeatherLocationComponent implements OnInit {
   private selectedLocation: WeatherLocation = null;
   private locations: WeatherLocation[] = [];
 
+  private searchInputSrc$: Subject<string> = new Subject<string>();
+
+
   constructor(private weatherLocationService: WeatherLocationService) {
+    this.searchInputSrc$
+      .debounceTime(500)
+      .distinctUntilChanged()
+      .switchMap(x => this.weatherLocationService.searchLocations(x))
+      .subscribe(locations => this.locations = locations);
   }
+
 
   ngOnInit() {
     this.getAllLocations();
@@ -30,20 +43,13 @@ export class WeatherLocationComponent implements OnInit {
       )
   }
 
-  onSearch(searchString) {
-    this.weatherLocationService.searchLocations(searchString)
-      .subscribe(
-        foundLocations => this.foundLocations = foundLocations,
-        () => {
-        }
-      );
-  }
 
 
   search(event) {
-    let searchString: string = event.target.value;
-    this.onSearch(searchString);
+    this.searchInputSrc$.next(event.target.value);
+
   }
+
 
   onLocationSelected(selectedLocation: WeatherLocation) {
     this.selectedLocation = selectedLocation;
