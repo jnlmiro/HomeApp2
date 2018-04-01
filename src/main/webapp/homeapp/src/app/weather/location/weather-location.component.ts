@@ -26,7 +26,7 @@ export class WeatherLocationComponent implements OnInit {
       .debounceTime(500)
       .distinctUntilChanged()
       .switchMap(x => this.weatherLocationService.searchLocations(x))
-      .subscribe(locations => this.locations = locations);
+      .subscribe(locations => this.foundLocations = locations);
   }
 
 
