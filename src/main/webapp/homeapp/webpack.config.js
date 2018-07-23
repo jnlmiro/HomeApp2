@@ -64,7 +64,6 @@ module.exports = {
       ".js"
     ],
     "modules": [
-      "./node_modules",
       "./node_modules"
     ],
     alias: {
@@ -74,7 +73,6 @@ module.exports = {
   },
   "resolveLoader": {
     "modules": [
-      "./node_modules",
       "./node_modules"
     ]
   },
@@ -83,7 +81,7 @@ module.exports = {
       "./src/main.ts"
     ],
     "polyfills": [
-      "./src/polyfills.ts"
+      "./src/polyfills.ts",
     ],
     "styles": [
       "./src/assets/styles/styles.scss",
