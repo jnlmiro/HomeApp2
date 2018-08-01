@@ -1,0 +1,87 @@
+- action:
+  - data_template:
+      payload: "{  \"name\": \"MotionOn\",\"id\": \"sensor.aeotec_zw100_multisensor_6_burglar_6\",  \"value\":  {{ states('sensor.aeotec_zw100_multisensor_6_burglar_6')}}}"
+      topic: homeassistant/motion-on
+    service: mqtt.publish
+  alias: MotionOn
+  condition: []
+  trigger:
+  - above: '7'
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6
+    platform: numeric_state
+- action:
+  - data_template:
+      payload: "{  \"name\": \"TamperOn\",\"id\": \"sensor.aeotec_zw100_multisensor_6_burglar_6\",  \"value\":  {{ states('sensor.aeotec_zw100_multisensor_6_burglar_6')}}}"
+      topic: homeassistant/tamper-on
+    service: mqtt.publish
+  alias: Tamper
+  condition: []
+  trigger:
+  - above: '2'
+    below: '4'
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6
+    platform: numeric_state
+- action:
+  - data_template:
+      payload: "{  \"name\": \"MotionOff\",\"id\": \"sensor.aeotec_zw100_multisensor_6_burglar_6\", \"value\":  {{ states('sensor.aeotec_zw100_multisensor_6_burglar_6')}}}"
+      topic: homeassistant/motion-off
+    service: mqtt.publish
+  alias: MotionOff
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6
+    from: '8'
+    to: '0'
+    platform: state
+- action:
+  - data_template:
+      payload: "{  \"name\": \"TamperOff\",\"id\": \"sensor.aeotec_zw100_multisensor_6_burglar_6\",  \"value\":  {{ states('sensor.aeotec_zw100_multisensor_6_burglar_6')}}}"
+      topic: homeassistant/tamper-off
+    service: mqtt.publish
+  alias: TamperOff
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_burglar_6
+    from: '3'
+    to: '0'
+    platform: state
+- action:
+  - data_template:
+      payload: "{\"name\": \"Temperature\",\"id\": \"sensor.aeotec_zw100_multisensor_6_temperature_7\",\"value\": {{ states('sensor.aeotec_zw100_multisensor_6_temperature_7')}}}"
+      topic: homeassistant/temperature
+    service: mqtt.publish
+  alias: Temperature
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_temperature_7
+    platform: state
+- action:
+  - data_template:
+      payload: "{\"name\": \"Humidity\",\"id\": \"sensor.aeotec_zw100_multisensor_6_relative_humidity_7\",\"value\": {{ states('sensor.aeotec_zw100_multisensor_6_relative_humidity_7')}}}"
+      topic: homeassistant/humidity
+    service: mqtt.publish
+  alias: Humidity
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_relative_humidity_7
+    platform: state
+- action:
+  - data_template:
+      payload: "{\"name\": \"Ultraviolet\",\"id\": \"sensor.aeotec_zw100_multisensor_6_ultraviolet_7\",\"value\": {{ states('sensor.aeotec_zw100_multisensor_6_ultraviolet_7') }}}"
+      topic: homeassistant/ultraviolet
+    service: mqtt.publish
+  alias: Ultraviolet
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_ultraviolet_7
+    platform: state
+- action:
+  - data_template:
+      payload: "{\"name\": \"Luminance\",\"id\": \"sensor.aeotec_zw100_multisensor_6_luminance_7\",\"value\": {{ states('sensor.aeotec_zw100_multisensor_6_luminance_7')}}}"
+      topic: homeassistant/luminance
+    service: mqtt.publish
+  alias: Luminance
+  condition: []
+  trigger:
+  - entity_id: sensor.aeotec_zw100_multisensor_6_luminance_7
+    platform: state

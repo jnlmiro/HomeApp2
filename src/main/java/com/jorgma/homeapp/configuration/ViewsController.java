@@ -33,7 +33,9 @@ public class ViewsController {
             "/weather",
             "/weather/**",
             "/rpi-backlight",
-            "/rpi-backlight/**"
+            "/rpi-backlight/**",
+            "/zwave",
+            "/zwave/**"
     }, method = RequestMethod.GET)
     public String index() {
         return "forward:" + indexPath() + "index.html";

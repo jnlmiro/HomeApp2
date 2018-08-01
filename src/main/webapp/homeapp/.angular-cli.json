@@ -20,9 +20,10 @@
       "prefix": "app",
       "styles": [
         "assets/styles/styles.scss",
-        "../node_modules/materialize-css/dist/css/materialize.css"
+        "./../node_modules/materialize-css/dist/css/materialize.css"
       ],
-      "scripts": [],
+      "scripts": [
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

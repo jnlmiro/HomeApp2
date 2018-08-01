@@ -11,6 +11,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {WeatherModule} from "./weather/weather.module";
 import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
+import {ZwaveModule} from "./zwave/zwave.module";
+import {WsModule} from "./websocket/ws.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {SharedModule} from "./shared/shared.module";
     RpiBackLightModule,
     StationsModule,
     WeatherModule,
+    WsModule,
+    ZwaveModule,
     AppRoutingModule,
     SharedModule
   ],

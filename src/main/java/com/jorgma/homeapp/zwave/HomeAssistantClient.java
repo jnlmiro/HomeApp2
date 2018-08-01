@@ -1,7 +1,6 @@
-package com.jorgma.homeapp.mqtt.service;
+package com.jorgma.homeapp.zwave;
 
 import com.jorgma.homeapp.configuration.MqttConfigurationContainer;
-import com.jorgma.homeapp.mqtt.domain.SimpleMqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.stereotype.Service;
@@ -13,11 +12,13 @@ import org.springframework.stereotype.Service;
 public class HomeAssistantClient {
 
     private MqttConfigurationContainer mqttConfigurationContainer;
+    private SimpleMqttCallback simpleMqttCallback;
 
     private MqttClient mqttClient;
 
-    public HomeAssistantClient(MqttConfigurationContainer mqttConfigurationContainer) {
+    public HomeAssistantClient(MqttConfigurationContainer mqttConfigurationContainer, SimpleMqttCallback simpleMqttCallback) {
         this.mqttConfigurationContainer = mqttConfigurationContainer;
+        this.simpleMqttCallback = simpleMqttCallback;
         createMqttClient();
     }
 
@@ -26,7 +27,7 @@ public class HomeAssistantClient {
         if (mqttClient == null) {
             try {
                 mqttClient = new MqttClient(mqttConfigurationContainer.getTcpBrokerUrl(), MqttClient.generateClientId());
-                mqttClient.setCallback(new SimpleMqttCallback());
+                mqttClient.setCallback(simpleMqttCallback);
                 mqttClient.connect();
                 mqttClient.subscribe("homeassistant/#");
             } catch (MqttException e) {
