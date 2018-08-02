@@ -1,0 +1,45 @@
+package com.jorgma.homeapp.zwave.domain;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
+/**
+ * Created by jorgma on 2018-07-30.
+ */
+
+public class ZwaveHaComponent {
+
+    private String id;
+    private String state;
+    private ZwaveHaComponentAttribute attributes;
+
+    @JsonGetter(value = "id")
+    public String getId() {
+        return id;
+    }
+
+    @JsonSetter(value = "entity_id")
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public ZwaveHaComponentAttribute getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(ZwaveHaComponentAttribute attributes) {
+        this.attributes = attributes;
+    }
+
+    public boolean isSensor() {
+        return getId().startsWith("sensor.");
+    }
+}

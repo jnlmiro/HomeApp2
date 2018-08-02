@@ -6,10 +6,11 @@ import {StompService} from "@stomp/ng2-stompjs";
 import {ZwaveSensorsComponent} from "./zwave.sensors.component";
 import {ZwaveSensorService} from "./zwave.sensor.service";
 import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
-  imports: [ZwaveRouting, CommonModule],
+  imports: [ZwaveRouting, CommonModule, HttpClientModule],
   declarations: [ZwaveSensorComponent, ZwaveSensorsComponent],
   exports: [],
   providers: [WsService, StompService, ZwaveSensorService]

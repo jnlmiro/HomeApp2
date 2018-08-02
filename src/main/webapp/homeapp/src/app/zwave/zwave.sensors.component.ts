@@ -23,6 +23,16 @@ export class ZwaveSensorsComponent implements OnInit {
     this.ws = this.wsService.getWs();
     this.wsSubscription = this.ws.subscribe('/topic');
     this.listen();
+    this.getSensors();
+  }
+
+
+  getSensors() {
+    this.zwaveSensorService.getSensors()
+      .subscribe(sensors => {
+        sensors.forEach(sensor => this.zwaveSensorService.addSensor(sensor));
+        this.sensors = this.zwaveSensorService.sensors;
+      });
   }
 
   listen(): void {
@@ -32,10 +42,8 @@ export class ZwaveSensorsComponent implements OnInit {
       })
       .subscribe(
         (msg_body: any) => {
-          console.log(`Received: ${msg_body}`);
           this.msg = msg_body;
           let sensor = this.zwaveSensorService.jsonToZwaveSensor(this.msg);
-          console.log(sensor);
           this.zwaveSensorService.addSensor(sensor);
           this.sensors = this.zwaveSensorService.sensors;
         });
