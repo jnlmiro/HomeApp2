@@ -18,7 +18,7 @@ export class ZwaveSensorService {
   }
 
   addSensor(sensor: ZwaveSensor): void {
-    let found = this.sensors.find(s => s.id == sensor.id && s.name == sensor.name);
+    let found = this.sensors.find(s => s.id == sensor.id);
     if (!found) {
       this.sensors.push(sensor);
     } else {

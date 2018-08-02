@@ -7,9 +7,11 @@ import {ZwaveSensor} from "./zwave.sensor.model";
 
 @Component({
   selector: 'zwave-sensors',
+  styleUrls: ['zwave.sensors.component.scss'],
   templateUrl: 'zwave.sensors.component.html'
 })
 export class ZwaveSensorsComponent implements OnInit {
+  title: string = "Home";
   msg: any = "";
   ws: StompService;
   wsSubscription: Observable<any>;

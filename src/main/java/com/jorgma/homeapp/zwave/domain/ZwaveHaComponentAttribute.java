@@ -10,6 +10,8 @@ public class ZwaveHaComponentAttribute {
     private String friendlyName;
     private int nodeId;
     private String unitOfMeasurement;
+    private String type;
+
 
     @JsonGetter(value = "friendlyName")
     public String getFriendlyName() {
@@ -39,5 +41,13 @@ public class ZwaveHaComponentAttribute {
     @JsonSetter(value = "unit_of_measurement")
     public void setUnitOfMeasurement(String unitOfMeasurement) {
         this.unitOfMeasurement = unitOfMeasurement;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

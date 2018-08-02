@@ -40,6 +40,9 @@ public class ZwaveHaComponent {
     }
 
     public boolean isSensor() {
-        return getId().startsWith("sensor.");
+        if (attributes.getType() == null || attributes.getType().isEmpty()) {
+            return false;
+        }
+        return attributes.getType().equals("sensor");
     }
 }

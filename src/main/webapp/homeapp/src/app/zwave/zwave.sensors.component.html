@@ -1,5 +1,10 @@
 <div class="container">
-  <div *ngFor="let sensor of sensors">
-    <zwave-sensor [sensor]="sensor"></zwave-sensor>
+  <div class="row">
+    <h4>{{title}}</h4>
+      <div class="sensors">
+        <div *ngFor="let sensor of sensors">
+          <zwave-sensor [sensor]="sensor"></zwave-sensor>
+        </div>
+      </div>
   </div>
 </div>
