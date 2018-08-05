@@ -12,15 +12,15 @@ sensor.sensative_strips_access_control:
   type: sensor
 
 # Hidden sensors
-sensor.aeotec_zw100_multisensor_6_alarm_type:
+zwave.aeotec_zw100_multisensor_6_alarm_type:
   hidden: true
-sensor.aeotec_zw100_multisensor_6_alarm_level:
+zwave.aeotec_zw100_multisensor_6_alarm_level:
   hidden: true
-sensor.aeotec_zw100_multisensor_6_sourcenodeid:
+zwave.aeotec_zw100_multisensor_6_sourcenodeid:
   hidden: true
-sensor.alarm_level:
+zwave.alarm_level:
   hidden: true
-sensor.alarm_type:
+zwave.alarm_type:
   hidden: true
 sensor.sensative_strips_burglar:
   hidden: true
