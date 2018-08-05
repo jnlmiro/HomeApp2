@@ -1,34 +1,44 @@
 sensor.aeotec_zw100_multisensor_6_relative_humidity_7:
+  sensor_type: humidity
   type: sensor
 sensor.aeotec_zw100_multisensor_6_luminance_7:
+  sensor_type: luminance
   type: sensor
 sensor.aeotec_zw100_multisensor_6_temperature_7:
+  sensor_type: temperature
   type: sensor
 sensor.aeotec_zw100_multisensor_6_ultraviolet_7:
+  sensor_type: alarm
   type: sensor
 sensor.aeotec_zw100_multisensor_6_burglar_6:
+  sensor_type: alarm
   type: sensor
 sensor.sensative_strips_access_control:
+  sensor_type: alarm
   type: sensor
-
-# Hidden sensors
 zwave.aeotec_zw100_multisensor_6_alarm_type:
   hidden: true
 zwave.aeotec_zw100_multisensor_6_alarm_level:
   hidden: true
 zwave.aeotec_zw100_multisensor_6_sourcenodeid:
   hidden: true
-zwave.alarm_level:
+zwave.aeotec_zw100_multisensor_6:
   hidden: true
-zwave.alarm_type:
+sensor.alarm_level_9:
+  hidden: true
+sensor.alarm_type_9:
+  hidden: true
+binary_sensor.sensor_9:
+  hidden: true
+sensor.alarm_level_10:
+  hidden: true
+sensor.alarm_type_10:
   hidden: true
 sensor.sensative_strips_burglar:
   hidden: true
+binary_sensor.sensor_10:
+  hidden: true
 sensor.sensative_strips_sourcenodeid:
   hidden: true
-binary_sensor.aeotec_zw100_multisensor_6_sensor:
-  hidden: true
-binary_sensor.sensor:
-  hidden: true
-binary_sensor.sensor_10:
+sensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
   hidden: true
