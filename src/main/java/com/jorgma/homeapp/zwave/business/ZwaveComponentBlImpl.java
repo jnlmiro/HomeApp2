@@ -2,6 +2,7 @@ package com.jorgma.homeapp.zwave.business;
 
 import com.jorgma.homeapp.zwave.domain.ZwaveHaComponent;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
+import com.jorgma.homeapp.zwave.utils.AlarmUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -51,6 +52,10 @@ public class ZwaveComponentBlImpl implements ZwaveComponentBl {
         zwaveSensor.setState(zwaveHaComponent.getState());
         zwaveSensor.setUnitOfMeasurement(zwaveHaComponent.getAttributes().getUnitOfMeasurement());
         zwaveSensor.setNodeId(zwaveHaComponent.getAttributes().getNodeId());
+        zwaveSensor.setSensorType(zwaveHaComponent.getAttributes().getResponsibility());
+
+        zwaveSensor = AlarmUtils.setAlarms(zwaveSensor);
+
         return zwaveSensor;
     }
 }

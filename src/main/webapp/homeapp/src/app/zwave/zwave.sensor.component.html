@@ -1,4 +1,4 @@
-<div class="sensor card-panel">
+<div class="sensor card-panel" [ngClass]="{'alarming': sensor.alarming}">
   <div class="name">
     {{sensor.name}}
   </div>

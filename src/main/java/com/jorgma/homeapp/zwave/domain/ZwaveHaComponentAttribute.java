@@ -11,6 +11,7 @@ public class ZwaveHaComponentAttribute {
     private int nodeId;
     private String unitOfMeasurement;
     private String type;
+    private String responsibility;
 
 
     @JsonGetter(value = "friendlyName")
@@ -49,5 +50,13 @@ public class ZwaveHaComponentAttribute {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getResponsibility() {
+        return responsibility;
+    }
+
+    public void setResponsibility(String responsibility) {
+        this.responsibility = responsibility;
     }
 }

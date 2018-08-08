@@ -11,6 +11,8 @@ public class ZwaveSensor {
     private String state;
     private String unitOfMeasurement;
     private int nodeId;
+    private String sensorType;
+    private boolean alarming;
 
     public String getId() {
         return id;
@@ -50,5 +52,21 @@ public class ZwaveSensor {
 
     public void setNodeId(int nodeId) {
         this.nodeId = nodeId;
+    }
+
+    public String getSensorType() {
+        return sensorType;
+    }
+
+    public void setSensorType(String sensorType) {
+        this.sensorType = sensorType;
+    }
+
+    public boolean isAlarming() {
+        return alarming;
+    }
+
+    public void setAlarming(boolean alarming) {
+        this.alarming = alarming;
     }
 }
