@@ -1,6 +1,7 @@
 package com.jorgma.homeapp.zwave.business;
 
 import com.jorgma.homeapp.zwave.domain.ZwaveHaComponent;
+import com.jorgma.homeapp.zwave.domain.ZwaveComponent;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 
 import java.util.List;
@@ -14,5 +15,5 @@ public interface ZwaveComponentBl {
 
     List<ZwaveHaComponent> getSensors();
 
-    ZwaveSensor toZwaveSensor(ZwaveHaComponent zwaveHaComponent);
+    ZwaveComponent toZwaveSensor(ZwaveHaComponent zwaveHaComponent);
 }

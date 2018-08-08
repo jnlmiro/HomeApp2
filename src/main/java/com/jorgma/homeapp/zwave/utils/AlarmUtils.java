@@ -1,6 +1,5 @@
 package com.jorgma.homeapp.zwave.utils;
 
-import com.google.gson.Gson;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 
 /**

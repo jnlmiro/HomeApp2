@@ -1,6 +1,6 @@
 package com.jorgma.homeapp.zwave.rest;
 
-import com.jorgma.homeapp.zwave.domain.ZwaveHaComponent;
+import com.jorgma.homeapp.zwave.domain.ZwaveComponent;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 import com.jorgma.homeapp.zwave.service.ZwaveComponentService;
 import org.springframework.beans.factory.annotation.Autowired;

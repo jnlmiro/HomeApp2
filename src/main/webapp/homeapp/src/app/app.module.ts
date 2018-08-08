@@ -13,6 +13,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
 import {ZwaveModule} from "./zwave/zwave.module";
 import {WsModule} from "./websocket/ws.module";
+import {WsService} from "./websocket/ws.service";
+import {StompService} from "@stomp/ng2-stompjs";
+import {ZwaveSensorService} from "./zwave/zwave.sensor.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import {WsModule} from "./websocket/ws.module";
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [WsService, StompService, ZwaveSensorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

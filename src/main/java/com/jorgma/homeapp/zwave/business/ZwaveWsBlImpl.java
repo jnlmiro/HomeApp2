@@ -1,13 +1,11 @@
 package com.jorgma.homeapp.zwave.business;
 
 import com.google.gson.Gson;
+import com.jorgma.homeapp.zwave.domain.ZwaveComponent;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 import com.jorgma.homeapp.zwave.utils.AlarmUtils;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by jorgma on 2018-07-30.

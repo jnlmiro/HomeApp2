@@ -53,9 +53,7 @@ public class ZwaveComponentBlImpl implements ZwaveComponentBl {
         zwaveSensor.setUnitOfMeasurement(zwaveHaComponent.getAttributes().getUnitOfMeasurement());
         zwaveSensor.setNodeId(zwaveHaComponent.getAttributes().getNodeId());
         zwaveSensor.setSensorType(zwaveHaComponent.getAttributes().getResponsibility());
-
         zwaveSensor = AlarmUtils.setAlarms(zwaveSensor);
-
         return zwaveSensor;
     }
 }

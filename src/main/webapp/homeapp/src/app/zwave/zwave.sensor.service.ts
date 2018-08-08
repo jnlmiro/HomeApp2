@@ -23,6 +23,7 @@ export class ZwaveSensorService {
       this.sensors.push(sensor);
     } else {
       found.state = sensor.state;
+      found.alarming = sensor.alarming;
     }
   }
 
@@ -35,6 +36,7 @@ export class ZwaveSensorService {
     let obj = new ZwaveSensor();
     try {
       obj = JSON.parse(msg);
+      console.log(`Sensor automation received: ${obj}`);
     } catch (Error) {
       console.log(`Error when parsing ${msg}`);
     }

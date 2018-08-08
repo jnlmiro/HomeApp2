@@ -2,7 +2,9 @@ export class ZwaveSensor {
   id:string;
   name:string;
   state:string;
-  unitOfMeasurement:any;
+  unitOfMeasurement:string;
+  sensorType:string;
+  alarming:boolean;
 }
 
 
