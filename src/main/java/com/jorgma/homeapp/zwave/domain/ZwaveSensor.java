@@ -6,7 +6,9 @@ package com.jorgma.homeapp.zwave.domain;
 public class ZwaveSensor extends ZwaveComponent {
 
     private String sensorType;
+    private String unitOfMeasurement;
     private boolean alarming;
+
 
     public String getSensorType() {
         return sensorType;
@@ -15,6 +17,15 @@ public class ZwaveSensor extends ZwaveComponent {
     public void setSensorType(String sensorType) {
         this.sensorType = sensorType;
     }
+
+    public String getUnitOfMeasurement() {
+        return unitOfMeasurement;
+    }
+
+    public void setUnitOfMeasurement(String unitOfMeasurement) {
+        this.unitOfMeasurement = unitOfMeasurement;
+    }
+
 
     public boolean isAlarming() {
         return alarming;

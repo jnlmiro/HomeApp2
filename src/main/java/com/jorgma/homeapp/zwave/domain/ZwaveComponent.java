@@ -9,7 +9,6 @@ public class ZwaveComponent {
     private String id;
     private String name;
     private String state;
-    private String unitOfMeasurement;
     private int nodeId;
 
     public String getId() {
@@ -26,14 +25,6 @@ public class ZwaveComponent {
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    public String getUnitOfMeasurement() {
-        return unitOfMeasurement;
-    }
-
-    public void setUnitOfMeasurement(String unitOfMeasurement) {
-        this.unitOfMeasurement = unitOfMeasurement;
     }
 
     public String getName() {
