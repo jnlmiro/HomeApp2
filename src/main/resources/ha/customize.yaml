@@ -42,3 +42,5 @@ sensor.sensative_strips_sourcenodeid:
   hidden: true
 sensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
   hidden: true
+switch.switch:
+  type: switch

@@ -271,7 +271,7 @@ sensor.aeotec_zw100_multisensor_6_burglar_6:
   platform: zwave
   unique_id: 11-72057594228523169
 switch.switch:
-  name:
+  name: Siren
   platform: zwave
   unique_id: 13-72057594260832256
 binary_sensor.sensor_10:
