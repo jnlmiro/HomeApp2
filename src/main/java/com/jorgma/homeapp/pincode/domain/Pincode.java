@@ -1,7 +1,6 @@
 package com.jorgma.homeapp.pincode.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +16,7 @@ public class Pincode {
     private int id;
     private int code;
 
-//    @JsonIgnore(value = true)
+    @JsonIgnore(value = true)
     public int getId() {
         return id;
     }
@@ -26,7 +25,7 @@ public class Pincode {
         this.id = id;
     }
 
-//    @JsonIgnore(value = true)
+    @JsonIgnore(value = true)
     public int getCode() {
         return code;
     }
