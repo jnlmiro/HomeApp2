@@ -16,7 +16,7 @@ public class Pincode {
     private int id;
     private int code;
 
-    @JsonIgnore(value = true)
+    @JsonIgnore
     public int getId() {
         return id;
     }
@@ -25,7 +25,7 @@ public class Pincode {
         this.id = id;
     }
 
-    @JsonIgnore(value = true)
+    @JsonIgnore
     public int getCode() {
         return code;
     }
