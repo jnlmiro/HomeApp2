@@ -31,7 +31,7 @@ public class SwaggerConfiguration {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("My SL")
+                .title("HomeApp")
                 .description("Web application...")
                 .contact(contact())
                 .build();
