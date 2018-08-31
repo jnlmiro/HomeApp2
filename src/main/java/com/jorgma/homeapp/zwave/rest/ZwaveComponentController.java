@@ -4,6 +4,7 @@ import com.jorgma.homeapp.zwave.domain.ZwaveComponent;
 import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 import com.jorgma.homeapp.zwave.service.ZwaveComponentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,5 +24,10 @@ public class ZwaveComponentController {
     @RequestMapping(value = "/sensors", method = RequestMethod.GET)
     public List<ZwaveSensor> getSensorsFromHa() {
         return zwaveComponentService.getSensorsFromHa();
+    }
+
+    @RequestMapping(value = "/sensors/{haId:.+}", method = RequestMethod.GET)
+    public ZwaveSensor getSensorFromHa(@PathVariable("haId") String haId) {
+        return zwaveComponentService.getSensorFromHa(haId);
     }
 }

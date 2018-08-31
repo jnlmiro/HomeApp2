@@ -5,11 +5,20 @@ import {ZwaveSensorsComponent} from "./zwave.sensors.component";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {PincodeModule} from "../shared/pincode/pincode.module";
+import {ZwaveSensorsConfigurationComponent} from "./configuration/zwave.sensors.configuration.component";
+import {ZwaveComponent} from "./zwave.component";
+import {ZwaveSensorConfigurationComponent} from "./configuration/zwave.sensor.configuration.component";
 
 
 @NgModule({
   imports: [ZwaveRouting, CommonModule, HttpClientModule, PincodeModule],
-  declarations: [ZwaveSensorComponent, ZwaveSensorsComponent],
+  declarations: [
+    ZwaveComponent,
+    ZwaveSensorComponent,
+    ZwaveSensorsComponent,
+    ZwaveSensorsConfigurationComponent,
+    ZwaveSensorConfigurationComponent
+  ],
   exports: [],
   providers: []
 })

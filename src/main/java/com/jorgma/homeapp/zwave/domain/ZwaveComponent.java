@@ -1,22 +1,42 @@
 package com.jorgma.homeapp.zwave.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
 /**
  * Created by jorgma on 2018-07-30.
  */
-
+@MappedSuperclass
 public class ZwaveComponent {
 
-    private String id;
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(name = "ha_id")
+    private String haId;
     private String name;
     private String state;
+    @Column(name = "node_id")
     private int nodeId;
 
-    public String getId() {
+    private boolean enabled;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getHaId() {
+        return haId;
+    }
+
+    public void setHaId(String haId) {
+        this.haId = haId;
     }
 
     public String getState() {
@@ -43,5 +63,11 @@ public class ZwaveComponent {
         this.nodeId = nodeId;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
 
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }

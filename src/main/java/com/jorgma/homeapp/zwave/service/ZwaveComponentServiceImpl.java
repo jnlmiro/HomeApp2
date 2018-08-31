@@ -23,7 +23,12 @@ public class ZwaveComponentServiceImpl implements ZwaveComponentService {
     }
 
     @Override
-    public List<ZwaveHaComponent> getSensors() {
+    public ZwaveSensor getSensorFromHa(String haId) {
+        return zwaveComponentBl.getSensorFromHa(haId);
+    }
+
+    @Override
+    public List<ZwaveHaComponent> getHaComponents() {
         return null;
     }
 }

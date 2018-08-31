@@ -11,6 +11,7 @@ import java.util.List;
 public interface ZwaveComponentService {
     List<ZwaveSensor> getSensorsFromHa();
 
-    List<ZwaveHaComponent> getSensors();
+    ZwaveSensor getSensorFromHa(String haId);
 
+    List<ZwaveHaComponent> getHaComponents();
 }

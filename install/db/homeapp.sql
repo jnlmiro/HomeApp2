@@ -29,10 +29,15 @@ CREATE TABLE IF NOT EXISTS weather_locations
 
 CREATE TABLE IF NOT EXISTS zwave_sensors
 (
-  id           INT AUTO_INCREMENT PRIMARY KEY,
-  sensor_ha_id VARCHAR(256) NOT NULL,
-  name         VARCHAR(256) NOT NULL,
-  state        INT          NOT NULL
+  id                  INT     AUTO_INCREMENT PRIMARY KEY,
+  ha_id               VARCHAR(256) NOT NULL,
+  node_id             VARCHAR(256) NOT NULL,
+  name                VARCHAR(256) NOT NULL,
+  state               INT          NOT NULL,
+  alarming            BOOLEAN DEFAULT FALSE,
+  sensor_type         VARCHAR(256),
+  unit_of_measurement VARCHAR(256),
+  enabled             BOOLEAN DEFAULT FALSE
 );
 
 

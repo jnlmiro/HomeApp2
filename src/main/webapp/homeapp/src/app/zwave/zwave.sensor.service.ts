@@ -17,8 +17,13 @@ export class ZwaveSensorService {
     return this.httpClient.get(this.url);
   }
 
+
+  getSensor(haId:string): Observable<ZwaveSensor> {
+    return this.httpClient.get(`this.url/${haId}`);
+  }
+
   addSensor(sensor: ZwaveSensor): void {
-    let found = this.sensors.find(s => s.id == sensor.id);
+    let found = this.sensors.find(s => s.haId == sensor.haId);
     if (!found) {
       this.sensors.push(sensor);
     } else {

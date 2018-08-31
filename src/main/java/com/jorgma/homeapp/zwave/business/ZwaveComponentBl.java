@@ -13,7 +13,9 @@ public interface ZwaveComponentBl {
 
     List<ZwaveSensor> getSensorsFromHa();
 
-    List<ZwaveHaComponent> getSensors();
+    List<ZwaveHaComponent> getHaComponents();
 
     ZwaveComponent toZwaveSensor(ZwaveHaComponent zwaveHaComponent);
+
+    ZwaveSensor getSensorFromHa(String haId);
 }
