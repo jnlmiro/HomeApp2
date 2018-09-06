@@ -5,6 +5,7 @@ import {Component, OnInit, OnDestroy, Input} from "@angular/core";
 import {SlDepartureService} from "./sl-departure.service";
 import {SlDeparture, Departure, Group} from "./sl-departure.model";
 import {style, animate, transition, trigger} from "@angular/animations";
+import {Station} from "../stations/station/station.model";
 
 @Component({
   selector: 'sl-departure',
@@ -25,17 +26,17 @@ export class SlDepartureComponent implements OnInit, OnDestroy {
   updateInterval: number;
   departureGroupType:string;
 
-  @Input() stationName: string;
+  @Input() station: Station;
   @Input() set depGroupType(groupType:string) {
     this.departureGroupType = groupType;
   }
 
   constructor(private slDepartureService: SlDepartureService) {
-    this.updateInterval = setInterval(() => this.getDepartures(this.stationName), 30000)
+    this.updateInterval = setInterval(() => this.getDepartures(this.station), 30000)
   }
 
   ngOnInit() {
-    this.getDepartures(this.stationName);
+    this.getDepartures(this.station);
 
   }
 
@@ -43,9 +44,9 @@ export class SlDepartureComponent implements OnInit, OnDestroy {
     clearInterval(this.updateInterval)
   }
 
-  public getDepartures(stationName: string) {
-    this.slDepartureService.getDepartures(stationName)
-      .then((slDepartures) => this.slDeparture = slDepartures)
+  public getDepartures(station: Station) {
+    this.slDepartureService.getDepartures(this.station)
+      .subscribe((slDepartures) => this.slDeparture = slDepartures)
   }
 
 

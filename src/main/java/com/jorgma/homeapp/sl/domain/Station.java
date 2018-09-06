@@ -1,17 +1,28 @@
 package com.jorgma.homeapp.sl.domain;
 
+import org.hibernate.annotations.CollectionId;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by jorgma on 2017-12-10.
  */
 
+@Entity(name = "stations")
 public class Station {
-
+    @Id()
+    @GeneratedValue()
     private int id;
     private String name;
+    @Column(name = "site_id")
     private int siteId;
     private String type;
     private int x;
     private int y;
+    private boolean enabled;
 
 
     public Station() {
@@ -66,6 +77,13 @@ public class Station {
         this.y = y;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     @Override
     public String toString() {
@@ -76,6 +94,7 @@ public class Station {
                 ", type='" + type + '\'' +
                 ", x=" + x +
                 ", y=" + y +
+                ", enabled=" + enabled +
                 '}';
     }
 }

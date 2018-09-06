@@ -4,7 +4,8 @@ export class TrafikLabStation {
   siteId: number;
   type: string;
   x: number;
-  y: number
+  y: number;
+  enabled:boolean;
 }
 
 export class Station extends TrafikLabStation {

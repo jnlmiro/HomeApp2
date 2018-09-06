@@ -1,11 +1,11 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {StationsComponent} from "./stations.component";
+import {StationsConfigurationComponent} from "./configuration/stations.configuration.component";
 
 const stationsRoutes: Routes = [
   {
     path: 'stations',
-    component: StationsComponent,
+    component: StationsConfigurationComponent,
   }
 
 ];

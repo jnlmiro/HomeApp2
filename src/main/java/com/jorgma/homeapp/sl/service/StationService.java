@@ -1,7 +1,6 @@
 package com.jorgma.homeapp.sl.service;
 
 import com.jorgma.homeapp.sl.domain.Station;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,4 +16,6 @@ public interface StationService {
     List<Station> getStations();
 
     void deleteStation(int id);
+
+    List<Station> getEnabledStations();
 }

@@ -1,7 +1,8 @@
 package com.jorgma.homeapp.sl.business;
 
-import com.jorgma.homeapp.sl.dao.StationDao;
+import com.jorgma.homeapp.sl.dao.StationsRepository;
 import com.jorgma.homeapp.sl.domain.Station;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,29 +12,33 @@ import java.util.List;
  */
 @Repository
 public class StationBlImpl implements StationBl {
-    private StationDao stationDao;
+    @Autowired
+    private StationsRepository stationsRepository;
 
-    public StationBlImpl(StationDao stationDao) {
-        this.stationDao = stationDao;
-    }
 
     @Override
     public void saveStation(Station station) {
-        stationDao.saveStation(station);
+        stationsRepository.save(station);
     }
 
     @Override
     public Station getStation(int id) {
-        return stationDao.getStation(id);
+        return stationsRepository.findOne(id);
     }
 
     @Override
     public List<Station> getStations() {
-        return stationDao.getStations();
+        return (List<Station>) stationsRepository.findAll();
     }
 
     @Override
     public void deleteStation(int id) {
-        stationDao.deleteStation(id);
+        stationsRepository.delete(id);
     }
+
+    @Override
+    public List<Station> getEnabledStations() {
+        return stationsRepository.findByEnabled(true);
+    }
+
 }

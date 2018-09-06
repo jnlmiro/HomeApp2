@@ -24,9 +24,26 @@ export class StationsService {
   }
 
 
-
-  public searchExternalStation(searchStr: string): Observable<Station[]> {
+  public searchStation(searchStr: string): Observable<Station[]> {
     return this.http.get(`${this.url}/search?stationName=${searchStr}`)
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error || 'Server error'));
+  }
+
+  public saveStation(station: Station): Observable<any> {
+    return this.http.post(`${this.url}`, station)
+      .map((res: Response) => res)
+      .catch((error: any) => Observable.throw(error || 'Server error'));
+  }
+
+  public removeStation(station: Station):Observable<any> {
+    return this.http.delete(`${this.url}/${station.id}`)
+      .map((res:Response) => res)
+      .catch((error:any) => Observable.throw(error) || 'Service error');
+  }
+
+  getEnabledStations():Observable<Station[]> {
+    return this.http.get(`${this.url}/enabled`)
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }

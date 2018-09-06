@@ -5,6 +5,7 @@ import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {Departure, SlDeparture, Group} from "./sl-departure.model";
+import {Station} from "../stations/station/station.model";
 
 const STATIONS = {
   'Ropsten': 9220,
@@ -35,16 +36,13 @@ export class SlDepartureService {
   }
 
 
-  public getDepartures(stationName: string) {
-    let stationId = this.getStationId(stationName);
-    return this.http.get(`${this.url}${stationId}`).toPromise()
-      .then((res) => this.mapDepartures(res));
+  public getDepartures(station: Station) {
+    let stationId = station.siteId;
+    console.log(station);
+    return this.http.get(`${this.url}${stationId}`)
+      .map((res) => this.mapDepartures(res));
   }
 
-
-  private getStationId(name: string) {
-    return STATIONS[name];
-  }
 
   private mapDepartures(res): SlDeparture {
 

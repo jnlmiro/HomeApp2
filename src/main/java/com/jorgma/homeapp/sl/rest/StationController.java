@@ -6,6 +6,7 @@ import com.jorgma.homeapp.sl.service.StationService;
 import com.jorgma.homeapp.sl.service.TrafikLabStationsRestService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,14 +42,20 @@ public class StationController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteStation(int id) {
+    public void deleteStation(@PathVariable int id) {
         stationService.deleteStation(id);
     }
 
+
+    @RequestMapping(value = "enabled", method = RequestMethod.GET)
+    public List<Station> getEnabledStations() {
+        return stationService.getEnabledStations();
+    }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
     public List<StationTrafikLab> searchStations(@RequestParam String stationName) {
         return trafikLabStationsRestService.searchStations(stationName);
     }
+
 
 }

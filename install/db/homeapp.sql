@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS stations (
   site_id INT          NOT NULL,
   type    VARCHAR(45)  NOT NULL,
   x       INT          NOT NULL,
-  y       INT          NOT NULL
+  y       INT          NOT NULL,
+  enabled BOOLEAN DEFAULT FALSE NOT NULL
 );
 
 

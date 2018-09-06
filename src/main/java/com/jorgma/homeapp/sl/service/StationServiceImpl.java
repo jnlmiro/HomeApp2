@@ -36,4 +36,9 @@ public class StationServiceImpl implements StationService {
     public void deleteStation(int id) {
         stationBl.deleteStation(id);
     }
+
+    @Override
+    public List<Station> getEnabledStations() {
+        return stationBl.getEnabledStations();
+    }
 }

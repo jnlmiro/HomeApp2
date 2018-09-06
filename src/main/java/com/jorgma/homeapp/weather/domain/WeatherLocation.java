@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class WeatherLocation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue()
     private int id;
     @JsonProperty("geonameid")
     private int geoNameId;

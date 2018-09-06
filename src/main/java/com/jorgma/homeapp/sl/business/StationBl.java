@@ -17,4 +17,6 @@ public interface StationBl {
     List<Station> getStations();
 
     void deleteStation(int id);
+
+    List<Station> getEnabledStations();
 }

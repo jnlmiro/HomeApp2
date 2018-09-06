@@ -29,7 +29,7 @@ import {ZwaveSensorService} from "./zwave/zwave.sensor.service";
     EntryBoardModule,
     DashboardModule,
     RpiBackLightModule,
-    StationsModule,
+    // StationsModule,
     WeatherModule,
     WsModule,
     ZwaveModule,
