@@ -42,8 +42,22 @@ CREATE TABLE IF NOT EXISTS zwave_sensors
 );
 
 
+CREATE TABLE IF NOT EXISTS alarm_groups (
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  name VARCHAR(256) NOT NULL ,
+  enabled BOOLEAN DEFAULT FALSE NOT NULL ,
+  fired BOOLEAN DEFAULT FALSE NOT NULL
+);
+
+
 CREATE TABLE IF NOT EXISTS pincodes
 (
   id   INT AUTO_INCREMENT PRIMARY KEY,
-  code INT NOT NULL
+  code INT NOT NULL,
+  alarm_group INT NOT NULL,
+  FOREIGN KEY fk_alarm_group_pincode(alarm_group) REFERENCES pincodes(id)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
+
+
