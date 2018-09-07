@@ -8,7 +8,7 @@ import java.util.Optional;
  * Created by jorgma on 2018-08-22.
  */
 public interface PincodeBl {
-    void createPincode(int code);
+    void createPincode(String code);
 
-    Optional<Pincode> getPincodeByCode(int pincode);
+    Optional<Pincode> getPincodeByCode(String pincode);
 }

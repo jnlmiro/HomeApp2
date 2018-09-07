@@ -15,20 +15,20 @@ import java.util.Optional;
  */
 
 @RestController
-@RequestMapping("/api/pincode")
+@RequestMapping("/api/pincodes")
 public class PincodeController {
 
     @Autowired
     private PincodeService pincodeService;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public void createPincode(int code) {
+    public void createPincode(String code) {
         pincodeService.createPincode(code);
     }
 
 
     @RequestMapping(value = "/validate", method = RequestMethod.POST)
-    public Pincode getPincodeByCode(int code) throws InvalidPincodeException {
+    public Pincode getPincodeByCode(String code) throws InvalidPincodeException {
         Optional<Pincode> pincode = pincodeService.getPincodeByCode(code);
         if (!pincode.isPresent()) {
             throw new InvalidPincodeException("Please try again");

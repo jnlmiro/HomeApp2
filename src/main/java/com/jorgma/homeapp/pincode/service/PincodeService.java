@@ -9,7 +9,7 @@ import java.util.Optional;
  */
 public interface PincodeService {
 
-    void createPincode(int code);
+    void createPincode(String code);
 
-    Optional<Pincode> getPincodeByCode(int code);
+    Optional<Pincode> getPincodeByCode(String code);
 }

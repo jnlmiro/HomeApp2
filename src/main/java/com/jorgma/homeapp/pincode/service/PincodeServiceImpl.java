@@ -18,12 +18,12 @@ public class PincodeServiceImpl implements PincodeService {
     private PincodeBl pincodeBl;
 
     @Override
-    public void createPincode(int code) {
+    public void createPincode(String code) {
         pincodeBl.createPincode(code);
     }
 
     @Override
-    public Optional<Pincode> getPincodeByCode(int code) throws InvalidPincodeException {
+    public Optional<Pincode> getPincodeByCode(String code) throws InvalidPincodeException {
         return pincodeBl.getPincodeByCode(code);
     }
 }
