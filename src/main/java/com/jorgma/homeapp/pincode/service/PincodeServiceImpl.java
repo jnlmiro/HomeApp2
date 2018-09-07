@@ -6,6 +6,7 @@ import com.jorgma.homeapp.pincode.domain.Pincode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -18,8 +19,13 @@ public class PincodeServiceImpl implements PincodeService {
     private PincodeBl pincodeBl;
 
     @Override
-    public void createPincode(String code) {
-        pincodeBl.createPincode(code);
+    public List<Pincode> getPincodes() {
+        return pincodeBl.getPincodes();
+    }
+
+    @Override
+    public Pincode createPincode(Pincode pincode) {
+        return pincodeBl.createPincode(pincode);
     }
 
     @Override

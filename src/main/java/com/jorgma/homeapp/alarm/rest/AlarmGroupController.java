@@ -25,4 +25,10 @@ public class AlarmGroupController {
 
         return alarmGroupService.getAlarmGroups();
     }
+
+
+    @RequestMapping(value = "",  method = RequestMethod.POST)
+    public AlarmGroup createAlarmGroups(AlarmGroup alarmGroup) {
+        return alarmGroupService.createAlarmGroup(alarmGroup);
+    }
 }

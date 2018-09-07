@@ -1,5 +1,6 @@
 package com.jorgma.homeapp.pincode.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jorgma.homeapp.alarm.domain.AlarmGroup;
 
@@ -16,10 +17,9 @@ public class Pincode {
     private String code;
 
     @OneToOne
-    @JoinColumn(referencedColumnName = "alarm_group")
+    @JoinColumn(name = "alarm_group")
     private AlarmGroup alarmGroup;
 
-    @JsonIgnore
     public int getId() {
         return id;
     }

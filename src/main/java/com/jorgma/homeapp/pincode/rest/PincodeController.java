@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -21,9 +22,14 @@ public class PincodeController {
     @Autowired
     private PincodeService pincodeService;
 
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<Pincode> getPincodes() {
+        return pincodeService.getPincodes();
+    }
+
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public void createPincode(String code) {
-        pincodeService.createPincode(code);
+    public Pincode createPincode(Pincode pincode) {
+        return pincodeService.createPincode(pincode);
     }
 
 

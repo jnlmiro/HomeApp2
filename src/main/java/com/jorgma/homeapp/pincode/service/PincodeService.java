@@ -2,6 +2,7 @@ package com.jorgma.homeapp.pincode.service;
 
 import com.jorgma.homeapp.pincode.domain.Pincode;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -9,7 +10,9 @@ import java.util.Optional;
  */
 public interface PincodeService {
 
-    void createPincode(String code);
+    Pincode createPincode(Pincode code);
 
     Optional<Pincode> getPincodeByCode(String code);
+
+    List<Pincode> getPincodes();
 }

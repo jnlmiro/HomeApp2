@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface AlarmGroupService {
     List<AlarmGroup> getAlarmGroups();
+
+    AlarmGroup createAlarmGroup(AlarmGroup alarmGroup);
 }

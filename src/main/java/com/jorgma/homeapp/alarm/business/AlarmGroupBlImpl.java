@@ -20,4 +20,9 @@ public class AlarmGroupBlImpl implements AlarmGroupBl {
     public List<AlarmGroup> getAlarmGroups() {
         return (List<AlarmGroup>) alarmGroupRepository.findAll();
     }
+
+    @Override
+    public AlarmGroup createAlarmGroup(AlarmGroup alarmGroup) {
+        return alarmGroupRepository.save(alarmGroup);
+    }
 }

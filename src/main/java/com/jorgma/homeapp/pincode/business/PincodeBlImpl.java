@@ -7,6 +7,7 @@ import com.jorgma.homeapp.pincode.domain.ValidPincode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -19,14 +20,17 @@ public class PincodeBlImpl implements PincodeBl {
     private PincodeRepository pincodeRepository;
 
     @Override
-    public void createPincode(int code) {
-        Pincode pincode = new Pincode();
-        pincode.setCode(code);
-        pincodeRepository.save(pincode);
+    public List<Pincode> getPincodes() {
+        return (List<Pincode>) pincodeRepository.findAll();
     }
 
     @Override
-    public Optional<Pincode> getPincodeByCode(int code) {
+    public Pincode createPincode(Pincode pincode) {
+        return pincodeRepository.save(pincode);
+    }
+
+    @Override
+    public Optional<Pincode> getPincodeByCode(String code) {
         return pincodeRepository.findByCode(code);
     }
 }
