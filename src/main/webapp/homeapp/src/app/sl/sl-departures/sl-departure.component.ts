@@ -32,7 +32,7 @@ export class SlDepartureComponent implements OnInit, OnDestroy {
   }
 
   constructor(private slDepartureService: SlDepartureService) {
-    this.updateInterval = setInterval(() => this.getDepartures(this.station), 30000)
+    this.updateInterval = <number>setInterval(() => this.getDepartures(this.station), 30000)
   }
 
   ngOnInit() {
