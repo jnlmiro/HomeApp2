@@ -2,15 +2,11 @@
  * Created by jorgma on 2017-07-06.
  */
 import {Injectable} from '@angular/core';
-import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
-import {Departure, SlDeparture, Group} from "./sl-departure.model";
+import {Departure, Group, SlDeparture} from "./sl-departure.model";
 import {Station} from "../stations/station/station.model";
+import {HttpClient} from "@angular/common/http";
 
-const STATIONS = {
-  'Ropsten': 9220,
-  'Drevergatan': 1145
-};
 
 const TYPES = {
   'busGroups': 'Buss',
@@ -31,22 +27,20 @@ export class SlDepartureService {
   // private url: string = 'http://sl.se/api/sv/RealTime/GetDepartures/';
   private url: string = 'api/sl/station/';
 
-  constructor(private http: Http) {
+  constructor(private httpClient: HttpClient) {
 
   }
 
 
   public getDepartures(station: Station) {
     let stationId = station.siteId;
-    console.log(station);
-    return this.http.get(`${this.url}${stationId}`)
+    return this.httpClient.get(`${this.url}${stationId}`)
       .map((res) => this.mapDepartures(res));
   }
 
 
   private mapDepartures(res): SlDeparture {
-
-    let resObj = res.json();
+    let resObj = res;
     let slDeparture = new SlDeparture();
     let mappedGroups: Group[] = [];
     if (resObj.data && resObj.data.hasResultData === true) {
