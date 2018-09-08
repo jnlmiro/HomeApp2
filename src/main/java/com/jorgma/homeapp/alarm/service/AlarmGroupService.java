@@ -1,7 +1,6 @@
 package com.jorgma.homeapp.alarm.service;
 
 import com.jorgma.homeapp.alarm.domain.AlarmGroup;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,4 +11,6 @@ public interface AlarmGroupService {
     List<AlarmGroup> getAlarmGroups();
 
     AlarmGroup createAlarmGroup(AlarmGroup alarmGroup);
+
+    AlarmGroup updateAlarmGroup(int id, AlarmGroup alarmGroup);
 }

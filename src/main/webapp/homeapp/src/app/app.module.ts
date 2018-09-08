@@ -16,6 +16,7 @@ import {WsModule} from "./websocket/ws.module";
 import {WsService} from "./websocket/ws.service";
 import {StompService} from "@stomp/ng2-stompjs";
 import {ZwaveSensorService} from "./zwave/zwave.sensor.service";
+import {AlarmGroupModule} from "./alarm/alarm-group.module";
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import {ZwaveSensorService} from "./zwave/zwave.sensor.service";
     EntryBoardModule,
     DashboardModule,
     RpiBackLightModule,
-    // StationsModule,
+    StationsModule,
     WeatherModule,
     WsModule,
     ZwaveModule,
+    AlarmGroupModule,
     AppRoutingModule,
     SharedModule
   ],

@@ -3,9 +3,7 @@ package com.jorgma.homeapp.alarm.rest;
 import com.jorgma.homeapp.alarm.domain.AlarmGroup;
 import com.jorgma.homeapp.alarm.service.AlarmGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,7 +26,13 @@ public class AlarmGroupController {
 
 
     @RequestMapping(value = "",  method = RequestMethod.POST)
-    public AlarmGroup createAlarmGroups(AlarmGroup alarmGroup) {
+    public AlarmGroup createAlarmGroup(@RequestBody AlarmGroup alarmGroup) {
         return alarmGroupService.createAlarmGroup(alarmGroup);
+    }
+
+
+    @RequestMapping(value = "/{id}",  method = RequestMethod.PUT)
+    public AlarmGroup updateAlarmGroup(@PathVariable int id, @RequestBody AlarmGroup alarmGroup) {
+        return alarmGroupService.updateAlarmGroup(id, alarmGroup);
     }
 }

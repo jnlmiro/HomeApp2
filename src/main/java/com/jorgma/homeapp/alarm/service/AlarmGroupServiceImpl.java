@@ -26,4 +26,9 @@ public class AlarmGroupServiceImpl implements AlarmGroupService{
     public AlarmGroup createAlarmGroup(AlarmGroup alarmGroup) {
         return alarmGroupBl.createAlarmGroup(alarmGroup);
     }
+
+    @Override
+    public AlarmGroup updateAlarmGroup(int id, AlarmGroup alarmGroup) {
+        return alarmGroupBl.updateAlarmGroup(id, alarmGroup);
+    }
 }

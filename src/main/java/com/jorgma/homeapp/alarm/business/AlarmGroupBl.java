@@ -11,4 +11,6 @@ public interface AlarmGroupBl {
     List<AlarmGroup> getAlarmGroups();
 
     AlarmGroup createAlarmGroup(AlarmGroup alarmGroup);
+
+    AlarmGroup updateAlarmGroup(int id, AlarmGroup alarmGroup);
 }
