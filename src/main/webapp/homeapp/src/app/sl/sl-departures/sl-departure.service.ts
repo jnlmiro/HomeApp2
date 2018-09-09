@@ -4,7 +4,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Departure, Group, SlDeparture} from "./sl-departure.model";
-import {Station} from "../stations/station/station.model";
+import {Station} from "../stations/station.model";
 import {HttpClient} from "@angular/common/http";
 
 

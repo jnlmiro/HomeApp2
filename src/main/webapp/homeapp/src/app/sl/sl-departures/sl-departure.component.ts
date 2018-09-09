@@ -5,7 +5,7 @@ import {Component, OnInit, OnDestroy, Input} from "@angular/core";
 import {SlDepartureService} from "./sl-departure.service";
 import {SlDeparture, Departure, Group} from "./sl-departure.model";
 import {style, animate, transition, trigger} from "@angular/animations";
-import {Station} from "../stations/station/station.model";
+import {Station} from "../stations/station.model";
 
 @Component({
   selector: 'sl-departure',
