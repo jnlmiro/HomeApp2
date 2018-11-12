@@ -29,7 +29,9 @@ public class HomeAssistantClient {
                 mqttClient = new MqttClient(mqttConfigurationContainer.getTcpBrokerUrl(), MqttClient.generateClientId());
                 mqttClient.setCallback(simpleMqttCallback);
                 mqttClient.connect();
+
                 mqttClient.subscribe("homeassistant/#");
+
             } catch (MqttException e) {
                 e.printStackTrace();
             }

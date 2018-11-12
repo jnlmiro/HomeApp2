@@ -1,21 +1,21 @@
-sensor.aeotec_zw100_multisensor_6_relative_humidity_7:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_7:
   responsibility: humidity
-  type: sensor
-sensor.aeotec_zw100_multisensor_6_luminance_7:
+  type: haSensor
+haSensor.aeotec_zw100_multisensor_6_luminance_7:
   responsibility: luminance
-  type: sensor
-sensor.aeotec_zw100_multisensor_6_temperature_7:
+  type: haSensor
+haSensor.aeotec_zw100_multisensor_6_temperature_7:
   responsibility: temperature
-  type: sensor
-sensor.aeotec_zw100_multisensor_6_ultraviolet_7:
+  type: haSensor
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_7:
   responsibility: ultraviolet
-  type: sensor
-sensor.aeotec_zw100_multisensor_6_burglar_6:
+  type: haSensor
+haSensor.aeotec_zw100_multisensor_6_burglar_6:
   responsibility: alarm
-  type: sensor
-sensor.sensative_strips_access_control:
+  type: haSensor
+haSensor.sensative_strips_access_control:
   responsibility: alarm
-  type: sensor
+  type: haSensor
 zwave.aeotec_zw100_multisensor_6_alarm_type:
   hidden: true
 zwave.aeotec_zw100_multisensor_6_alarm_level:
@@ -24,23 +24,23 @@ zwave.aeotec_zw100_multisensor_6_sourcenodeid:
   hidden: true
 zwave.aeotec_zw100_multisensor_6:
   hidden: true
-sensor.alarm_level_9:
+haSensor.alarm_level_9:
   hidden: true
-sensor.alarm_type_9:
+haSensor.alarm_type_9:
   hidden: true
 binary_sensor.sensor_9:
   hidden: true
-sensor.alarm_level_10:
+haSensor.alarm_level_10:
   hidden: true
-sensor.alarm_type_10:
+haSensor.alarm_type_10:
   hidden: true
-sensor.sensative_strips_burglar:
+haSensor.sensative_strips_burglar:
   hidden: true
 binary_sensor.sensor_10:
   hidden: true
-sensor.sensative_strips_sourcenodeid:
+haSensor.sensative_strips_sourcenodeid:
   hidden: true
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
   hidden: true
 switch.switch:
   type: switch

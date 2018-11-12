@@ -7,19 +7,20 @@ import {HttpClient} from "@angular/common/http";
 export class ZwaveSensorService {
   sensors: ZwaveSensor[] = [];
   url: string = '/api/zwave/sensors';
+  haUrl: string = '/api/zwave/ha-sensors';
 
 
   constructor(private httpClient: HttpClient) {
   }
 
 
-  getSensors(): Observable<ZwaveSensor[]> {
-    return this.httpClient.get(this.url);
+  getHaSensors(): Observable<ZwaveSensor[]> {
+    return this.httpClient.get(this.haUrl);
   }
 
 
-  getSensor(haId:string): Observable<ZwaveSensor> {
-    return this.httpClient.get(`this.url/${haId}`);
+  getHaSensor(haId: string): Observable<ZwaveSensor> {
+    return this.httpClient.get(`this.haUrl/${haId}`);
   }
 
   addSensor(sensor: ZwaveSensor): void {
@@ -47,4 +48,19 @@ export class ZwaveSensorService {
     }
     return obj;
   }
+
+  saveSensor(sensor: ZwaveSensor): Observable<ZwaveSensor> {
+    return this.httpClient.post(this.url, sensor);
+  }
+
+
+  getSensors(): Observable<ZwaveSensor[]> {
+    return this.httpClient.get(this.url);
+  }
+
+
+  getSensor(id:number): Observable<ZwaveSensor> {
+    return this.httpClient.get(`this.url/${id}`);
+  }
+
 }

@@ -3,11 +3,11 @@ import {ZwaveSensorService} from "../zwave.sensor.service";
 import {ZwaveSensor} from "../zwave.sensor.model";
 
 @Component({
-  selector: 'zwave-sensors-configuration',
-  templateUrl: './zwave.sensors.configuration.component.html'
+  selector: 'zwave-ha-sensors-configuration',
+  templateUrl: './zwave.ha.sensors.configuration.component.html'
 })
-export class ZwaveSensorsConfigurationComponent implements OnInit {
-  title: string = "Zwave Sensors Configuration";
+export class ZwaveHaSensorsConfigurationComponent implements OnInit {
+  title: string = "HA Zwave Sensors Configuration";
   sensors: ZwaveSensor[] = [];
   selectedSensors: ZwaveSensor[] = [];
 
@@ -34,8 +34,6 @@ export class ZwaveSensorsConfigurationComponent implements OnInit {
     if (!foundSensor) {
       this.selectedSensors.push(sensor);
     }
-
-    this.enableSensor(sensor);
   }
 
 
@@ -44,17 +42,9 @@ export class ZwaveSensorsConfigurationComponent implements OnInit {
     if (foundSensor) {
       this.selectedSensors = this.selectedSensors.filter(s => s.haId !== sensor.haId)
     }
-    this.disableSensor(sensor);
-  }
-
-
-  enableSensor(sensor: ZwaveSensor): void {
 
   }
 
-  disableSensor(sensor: ZwaveSensor): void {
-
-  }
 
 
   saveSensor(sensor):void {

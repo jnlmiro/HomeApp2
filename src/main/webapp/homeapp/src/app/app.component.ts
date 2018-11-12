@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   getSensors() {
-    this.zwaveSensorService.getSensors()
+    this.zwaveSensorService.getHaSensors()
       .subscribe(sensors => {
         sensors.forEach(sensor => {
           console.log(`Alarming sensor: ${sensor}`);

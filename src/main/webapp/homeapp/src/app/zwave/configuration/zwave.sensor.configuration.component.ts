@@ -23,7 +23,7 @@ export class ZwaveSensorConfigurationComponent implements OnInit {
   getSensor() {
     let sensor$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.zwaveSensorService.getSensor(params.get("haId"))
+        this.zwaveSensorService.getSensor(+params.get("id"))
       ));
     sensor$.subscribe(sensor => this.sensor = sensor);
   }

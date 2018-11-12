@@ -1,8 +1,8 @@
-<div class="sensor card-panel" [ngClass]="{'alarming': sensor.alarming}">
+<div class="sensor card-panel" [ngClass]="{'alarming': haSensor.alarming}">
   <div class="name">
-    {{sensor.name}}
+    {{haSensor.name}}
   </div>
   <div class="value">
-    {{sensor.state}} {{sensor.unitOfMeasurement}}
+    {{haSensor.state}} {{haSensor.unitOfMeasurement}}
   </div>
 </div>

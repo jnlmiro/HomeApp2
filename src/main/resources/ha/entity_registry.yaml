@@ -2,47 +2,47 @@ media_player.living_room_tv:
   name:
   platform: cast
   unique_id: b34fe47f-6430-149d-d424-7539282e591f
-sensor.alarm_type:
+haSensor.alarm_type:
   name:
   platform: zwave
   unique_id: 2-72057594077528065
-sensor.alarm_level:
+haSensor.alarm_level:
   name:
   platform: zwave
   unique_id: 2-72057594077528081
-binary_sensor.sensor:
+binary_sensor.haSensor:
   name: ''
   platform: zwave
   unique_id: 2-72057594076463104
-sensor.aeotec_zw100_multisensor_6_temperature:
+haSensor.aeotec_zw100_multisensor_6_temperature:
   name: Temperature
   platform: zwave
   unique_id: 2-72057594076479506
-sensor.aeotec_zw100_multisensor_6_luminance:
+haSensor.aeotec_zw100_multisensor_6_luminance:
   name: Luminance
   platform: zwave
   unique_id: 2-72057594076479538
-sensor.aeotec_zw100_multisensor_6_relative_humidity:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity:
   name: Humidity
   platform: zwave
   unique_id: 2-72057594076479570
-sensor.aeotec_zw100_multisensor_6_ultraviolet:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet:
   name: Ultraviolet
   platform: zwave
   unique_id: 2-72057594076479922
-sensor.aeotec_zw100_multisensor_6_sourcenodeid:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid:
   name: SourceNode
   platform: zwave
   unique_id: 2-72057594077528097
-sensor.aeotec_zw100_multisensor_6_burglar:
+haSensor.aeotec_zw100_multisensor_6_burglar:
   name: Motion
   platform: zwave
   unique_id: 2-72057594077528225
-sensor.alarm_type_2:
+haSensor.alarm_type_2:
   name:
   platform: zwave
   unique_id: 3-72057594094305281
-sensor.alarm_level_2:
+haSensor.alarm_level_2:
   name:
   platform: zwave
   unique_id: 3-72057594094305297
@@ -50,35 +50,35 @@ binary_sensor.sensor_2:
   name:
   platform: zwave
   unique_id: 3-72057594093240320
-sensor.aeotec_zw100_multisensor_6_temperature_2:
+haSensor.aeotec_zw100_multisensor_6_temperature_2:
   name:
   platform: zwave
   unique_id: 3-72057594093256722
-sensor.aeotec_zw100_multisensor_6_luminance_2:
+haSensor.aeotec_zw100_multisensor_6_luminance_2:
   name:
   platform: zwave
   unique_id: 3-72057594093256754
-sensor.aeotec_zw100_multisensor_6_relative_humidity_2:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_2:
   name:
   platform: zwave
   unique_id: 3-72057594093256786
-sensor.aeotec_zw100_multisensor_6_ultraviolet_2:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_2:
   name:
   platform: zwave
   unique_id: 3-72057594093257138
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_2:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_2:
   name:
   platform: zwave
   unique_id: 3-72057594094305313
-sensor.aeotec_zw100_multisensor_6_burglar_2:
+haSensor.aeotec_zw100_multisensor_6_burglar_2:
   name:
   platform: zwave
   unique_id: 3-72057594094305441
-sensor.alarm_type_3:
+haSensor.alarm_type_3:
   name:
   platform: zwave
   unique_id: 4-72057594111082497
-sensor.alarm_level_3:
+haSensor.alarm_level_3:
   name:
   platform: zwave
   unique_id: 4-72057594111082513
@@ -86,35 +86,35 @@ binary_sensor.sensor_3:
   name:
   platform: zwave
   unique_id: 4-72057594110017536
-sensor.aeotec_zw100_multisensor_6_temperature_3:
+haSensor.aeotec_zw100_multisensor_6_temperature_3:
   name:
   platform: zwave
   unique_id: 4-72057594110033938
-sensor.aeotec_zw100_multisensor_6_luminance_3:
+haSensor.aeotec_zw100_multisensor_6_luminance_3:
   name:
   platform: zwave
   unique_id: 4-72057594110033970
-sensor.aeotec_zw100_multisensor_6_relative_humidity_3:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_3:
   name:
   platform: zwave
   unique_id: 4-72057594110034002
-sensor.aeotec_zw100_multisensor_6_ultraviolet_3:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_3:
   name:
   platform: zwave
   unique_id: 4-72057594110034354
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_3:
   name:
   platform: zwave
   unique_id: 4-72057594111082529
-sensor.aeotec_zw100_multisensor_6_burglar_3:
+haSensor.aeotec_zw100_multisensor_6_burglar_3:
   name:
   platform: zwave
   unique_id: 4-72057594111082657
-sensor.alarm_type_4:
+haSensor.alarm_type_4:
   name:
   platform: zwave
   unique_id: 5-72057594127859713
-sensor.alarm_level_4:
+haSensor.alarm_level_4:
   name:
   platform: zwave
   unique_id: 5-72057594127859729
@@ -122,35 +122,35 @@ binary_sensor.sensor_4:
   name:
   platform: zwave
   unique_id: 5-72057594126794752
-sensor.aeotec_zw100_multisensor_6_temperature_4:
+haSensor.aeotec_zw100_multisensor_6_temperature_4:
   name:
   platform: zwave
   unique_id: 5-72057594126811154
-sensor.aeotec_zw100_multisensor_6_luminance_4:
+haSensor.aeotec_zw100_multisensor_6_luminance_4:
   name:
   platform: zwave
   unique_id: 5-72057594126811186
-sensor.aeotec_zw100_multisensor_6_relative_humidity_4:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_4:
   name:
   platform: zwave
   unique_id: 5-72057594126811218
-sensor.aeotec_zw100_multisensor_6_ultraviolet_4:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_4:
   name:
   platform: zwave
   unique_id: 5-72057594126811570
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_4:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_4:
   name:
   platform: zwave
   unique_id: 5-72057594127859745
-sensor.aeotec_zw100_multisensor_6_burglar_4:
+haSensor.aeotec_zw100_multisensor_6_burglar_4:
   name:
   platform: zwave
   unique_id: 5-72057594127859873
-sensor.alarm_type_5:
+haSensor.alarm_type_5:
   name:
   platform: zwave
   unique_id: 6-72057594144636929
-sensor.alarm_level_5:
+haSensor.alarm_level_5:
   name:
   platform: zwave
   unique_id: 6-72057594144636945
@@ -158,11 +158,11 @@ binary_sensor.sensor_5:
   name:
   platform: zwave
   unique_id: 6-72057594143571968
-sensor.alarm_type_6:
+haSensor.alarm_type_6:
   name:
   platform: zwave
   unique_id: 8-72057594178191361
-sensor.alarm_level_6:
+haSensor.alarm_level_6:
   name:
   platform: zwave
   unique_id: 8-72057594178191377
@@ -170,35 +170,35 @@ binary_sensor.sensor_6:
   name:
   platform: zwave
   unique_id: 8-72057594177126400
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_5:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_5:
   name:
   platform: zwave
   unique_id: 8-72057594178191393
-sensor.aeotec_zw100_multisensor_6_burglar_5:
+haSensor.aeotec_zw100_multisensor_6_burglar_5:
   name:
   platform: zwave
   unique_id: 8-72057594178191521
-sensor.aeotec_zw100_multisensor_6_temperature_5:
+haSensor.aeotec_zw100_multisensor_6_temperature_5:
   name:
   platform: zwave
   unique_id: 8-72057594177142802
-sensor.aeotec_zw100_multisensor_6_relative_humidity_5:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_5:
   name:
   platform: zwave
   unique_id: 8-72057594177142866
-sensor.aeotec_zw100_multisensor_6_luminance_5:
+haSensor.aeotec_zw100_multisensor_6_luminance_5:
   name:
   platform: zwave
   unique_id: 8-72057594177142834
-sensor.aeotec_zw100_multisensor_6_ultraviolet_5:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_5:
   name:
   platform: zwave
   unique_id: 8-72057594177143218
-sensor.alarm_type_7:
+haSensor.alarm_type_7:
   name:
   platform: zwave
   unique_id: 9-72057594194968577
-sensor.alarm_level_7:
+haSensor.alarm_level_7:
   name:
   platform: zwave
   unique_id: 9-72057594194968593
@@ -206,27 +206,27 @@ binary_sensor.sensor_7:
   name:
   platform: zwave
   unique_id: 9-72057594193903616
-sensor.aeotec_zw100_multisensor_6_temperature_6:
+haSensor.aeotec_zw100_multisensor_6_temperature_6:
   name:
   platform: zwave
   unique_id: 9-72057594193920018
-sensor.aeotec_zw100_multisensor_6_relative_humidity_6:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_6:
   name:
   platform: zwave
   unique_id: 9-72057594193920082
-sensor.aeotec_zw100_multisensor_6_luminance_6:
+haSensor.aeotec_zw100_multisensor_6_luminance_6:
   name:
   platform: zwave
   unique_id: 9-72057594193920050
-sensor.aeotec_zw100_multisensor_6_ultraviolet_6:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_6:
   name:
   platform: zwave
   unique_id: 9-72057594193920434
-sensor.alarm_type_8:
+haSensor.alarm_type_8:
   name:
   platform: zwave
   unique_id: 10-72057594211745793
-sensor.alarm_level_8:
+haSensor.alarm_level_8:
   name:
   platform: zwave
   unique_id: 10-72057594211745809
@@ -234,11 +234,11 @@ binary_sensor.sensor_8:
   name:
   platform: zwave
   unique_id: 10-72057594210680832
-sensor.alarm_type_9:
+haSensor.alarm_type_9:
   name:
   platform: zwave
   unique_id: 11-72057594228523009
-sensor.alarm_level_9:
+haSensor.alarm_level_9:
   name:
   platform: zwave
   unique_id: 11-72057594228523025
@@ -246,27 +246,27 @@ binary_sensor.sensor_9:
   name:
   platform: zwave
   unique_id: 11-72057594227458048
-sensor.aeotec_zw100_multisensor_6_temperature_7:
+haSensor.aeotec_zw100_multisensor_6_temperature_7:
   name: Temperature
   platform: zwave
   unique_id: 11-72057594227474450
-sensor.aeotec_zw100_multisensor_6_relative_humidity_7:
+haSensor.aeotec_zw100_multisensor_6_relative_humidity_7:
   name: Humidity
   platform: zwave
   unique_id: 11-72057594227474514
-sensor.aeotec_zw100_multisensor_6_luminance_7:
+haSensor.aeotec_zw100_multisensor_6_luminance_7:
   name: Luminance
   platform: zwave
   unique_id: 11-72057594227474482
-sensor.aeotec_zw100_multisensor_6_ultraviolet_7:
+haSensor.aeotec_zw100_multisensor_6_ultraviolet_7:
   name: Ultraviolet
   platform: zwave
   unique_id: 11-72057594227474866
-sensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
+haSensor.aeotec_zw100_multisensor_6_sourcenodeid_6:
   name:
   platform: zwave
   unique_id: 11-72057594228523041
-sensor.aeotec_zw100_multisensor_6_burglar_6:
+haSensor.aeotec_zw100_multisensor_6_burglar_6:
   name: Burglar
   platform: zwave
   unique_id: 11-72057594228523169
@@ -278,23 +278,23 @@ binary_sensor.sensor_10:
   name:
   platform: zwave
   unique_id: 14-72057594277789696
-sensor.alarm_type_10:
+haSensor.alarm_type_10:
   name:
   platform: zwave
   unique_id: 14-72057594278854657
-sensor.alarm_level_10:
+haSensor.alarm_level_10:
   name:
   platform: zwave
   unique_id: 14-72057594278854673
-sensor.sensative_strips_sourcenodeid:
+haSensor.sensative_strips_sourcenodeid:
   name:
   platform: zwave
   unique_id: 14-72057594278854689
-sensor.sensative_strips_access_control:
+haSensor.sensative_strips_access_control:
   name: WindowStrip
   platform: zwave
   unique_id: 14-72057594278854801
-sensor.sensative_strips_burglar:
+haSensor.sensative_strips_burglar:
   name:
   platform: zwave
   unique_id: 14-72057594278854817

@@ -6,6 +6,7 @@ import com.jorgma.homeapp.zwave.domain.ZwaveSensor;
 import com.jorgma.homeapp.zwave.utils.AlarmUtils;
 import com.jorgma.homeapp.zwave.utils.HaRestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,8 @@ import java.util.stream.Collectors;
 /**
  * Created by jorgma on 2018-08-02.
  */
-@Service
+@Profile("!mock")
+@Service()
 public class ZwaveComponentBlImpl implements ZwaveComponentBl {
     @Autowired
     private RestTemplate restTemplate;
@@ -77,9 +79,26 @@ public class ZwaveComponentBlImpl implements ZwaveComponentBl {
     }
 
 
-    public void saveZwaveSensor(ZwaveSensor sensor) {
+    public void save(ZwaveSensor sensor) {
         zwaveSensorRepository.save(sensor);
     }
+
+    @Override
+    public ZwaveSensor saveSensor(ZwaveSensor zwaveSensor) {
+        return zwaveSensorRepository.save(zwaveSensor);
+    }
+
+    @Override
+    public List<ZwaveSensor> getAllSensors() {
+        return (List<ZwaveSensor>) zwaveSensorRepository.findAll();
+    }
+
+
+    @Override
+    public ZwaveSensor getSensor(int id) {
+        return zwaveSensorRepository.findOne(id);
+    }
+
 }
 
 

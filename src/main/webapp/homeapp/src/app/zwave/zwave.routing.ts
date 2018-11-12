@@ -10,18 +10,19 @@ export const zwaveRoutes: Routes = [
     component: ZwaveComponent,
     children: [
       {
-        path: '',
-        component: ZwaveSensorsComponent,
-      }, {
         path: 'config',
         component: ZwaveSensorsConfigurationComponent,
         children: [
           {
-            path: ':haId',
+            path: ':id',
             component: ZwaveSensorConfigurationComponent
           }
         ]
-      }
+      },
+      {
+        path: '',
+        component: ZwaveSensorsComponent,
+      },
     ]
   }
 ];

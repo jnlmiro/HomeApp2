@@ -14,4 +14,10 @@ public interface ZwaveComponentService {
     ZwaveSensor getSensorFromHa(String haId);
 
     List<ZwaveHaComponent> getHaComponents();
+
+    ZwaveSensor saveSensor(ZwaveSensor zwaveSensor);
+
+    List<ZwaveSensor> getAllSensors();
+
+    ZwaveSensor getSensor(int id);
 }

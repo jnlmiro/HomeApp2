@@ -31,4 +31,19 @@ public class ZwaveComponentServiceImpl implements ZwaveComponentService {
     public List<ZwaveHaComponent> getHaComponents() {
         return null;
     }
+
+    @Override
+    public ZwaveSensor saveSensor(ZwaveSensor zwaveSensor) {
+        return zwaveComponentBl.saveSensor(zwaveSensor);
+    }
+
+    @Override
+    public List<ZwaveSensor> getAllSensors() {
+        return zwaveComponentBl.getAllSensors();
+    }
+
+    @Override
+    public ZwaveSensor getSensor(int id) {
+        return zwaveComponentBl.getSensor(id);
+    }
 }

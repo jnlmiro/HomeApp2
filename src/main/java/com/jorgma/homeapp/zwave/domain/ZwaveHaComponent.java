@@ -43,7 +43,7 @@ public class ZwaveHaComponent {
         if (attributes.getType() == null || attributes.getType().isEmpty()) {
             return false;
         }
-        return attributes.getType().equals("sensor");
+        return attributes.getType().equals("haSensor");
     }
 
     public boolean isSwitch() {

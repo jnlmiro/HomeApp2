@@ -19,6 +19,7 @@ public class SimpleMqttCallbackDispatcherBlImpl implements SimpleMqttCallbackDis
     public void dispatch(String topic, String msg) {
         assert !topic.isEmpty();
         zwaveWsBl.send(msg);
+
     }
 
 }

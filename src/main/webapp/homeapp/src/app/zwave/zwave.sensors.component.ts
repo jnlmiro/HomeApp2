@@ -30,7 +30,7 @@ export class ZwaveSensorsComponent implements OnInit {
 
 
   getSensors() {
-    this.zwaveSensorService.getSensors()
+    this.zwaveSensorService.getHaSensors()
       .subscribe(sensors => {
         sensors.forEach(sensor => this.zwaveSensorService.addSensor(sensor));
         this.sensors = this.zwaveSensorService.sensors;
