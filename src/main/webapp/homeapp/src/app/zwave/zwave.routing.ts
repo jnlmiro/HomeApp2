@@ -3,6 +3,8 @@ import {ZwaveSensorsConfigurationComponent} from "./configuration/zwave.sensors.
 import {ZwaveComponent} from "./zwave.component";
 import {ZwaveSensorsComponent} from "./zwave.sensors.component";
 import {ZwaveSensorConfigurationComponent} from "./configuration/zwave.sensor.configuration.component";
+import {ZwaveMySensorsConfigurationComponent} from "./configuration/zwave.my.sensors.configuration.component";
+import {ZwaveHaSensorsConfigurationComponent} from "./configuration/zwave.ha.sensors.configuration.component";
 
 export const zwaveRoutes: Routes = [
   {
@@ -14,9 +16,23 @@ export const zwaveRoutes: Routes = [
         component: ZwaveSensorsConfigurationComponent,
         children: [
           {
-            path: ':id',
-            component: ZwaveSensorConfigurationComponent
-          }
+            path: 'ha',
+            component: ZwaveHaSensorsConfigurationComponent
+          },
+          {
+            path: 'mine',
+            component: ZwaveMySensorsConfigurationComponent,
+            children: [
+              {
+                path: ':id',
+                component: ZwaveSensorConfigurationComponent
+              }
+            ]
+          },
+          {
+            path: '',
+            component: ZwaveMySensorsConfigurationComponent,
+          },
         ]
       },
       {
